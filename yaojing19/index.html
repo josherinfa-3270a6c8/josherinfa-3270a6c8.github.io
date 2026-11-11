@@ -1,0 +1,1956 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>妖精192.com - 妖精题材内容聚合与条目速查</title>
+  <meta name="description" content="妖精192.com 聚合妖精题材的漫画、动画、游戏与轻小说条目，提供更新速递、分类索引、深度解析与用户评论。适合想快速查找妖精类作品、了解近期动态的读者。">
+  <meta name="keywords" content="妖精192.com">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%237c5cbf' d='M16 2l4 8 8 2-6 6 2 8-8-4-8 4 2-8-6-6 8-2z'/%3E%3C/svg%3E" type="image/svg+xml">
+  <style>
+    :root{
+      --fairy-primary:#7c5cbf;
+      --fairy-primary-light:#a38cd9;
+      --fairy-primary-dark:#4a3580;
+      --fairy-bg:#f6f3fc;
+      --fairy-panel:#ffffff;
+      --fairy-text:#1e1a2e;
+      --fairy-text-2:#4a4560;
+      --fairy-text-3:#7a7490;
+      --fairy-border:#e2ddf0;
+      --fairy-radius-card:16px;
+      --fairy-radius-btn:10px;
+      --fairy-radius-tag:6px;
+      --fairy-radius-banner:14px;
+      --fairy-shadow:0 2px 8px rgba(74,53,128,.08);
+      --fairy-shadow-hover:0 8px 24px rgba(74,53,128,.16);
+      --fairy-gap:24px;
+      --fairy-font:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;scroll-padding-top:130px;}
+    body{
+      font-family:var(--fairy-font);
+      background:var(--fairy-bg);
+      color:var(--fairy-text);
+      line-height:1.7;
+      font-size:15px;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
+    ul{list-style:none;}
+    button{font-family:inherit;cursor:pointer;}
+
+    /* 吸顶公告条 */
+    .notice-bar{
+      background:var(--fairy-primary-dark);
+      color:#f0ecfa;
+      font-size:13px;
+      padding:8px 0;
+      position:sticky;
+      top:0;
+      z-index:100;
+      overflow:hidden;
+    }
+    .notice-inner{
+      max-width:1360px;
+      margin:0 auto;
+      padding:0 24px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .notice-brand{
+      font-weight:700;
+      color:#fff;
+      white-space:nowrap;
+      letter-spacing:.5px;
+    }
+    .notice-sep{opacity:.4;}
+    .notice-item{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .notice-item time{
+      background:rgba(255,255,255,.18);
+      border-radius:4px;
+      padding:1px 6px;
+      font-size:12px;
+    }
+    .notice-item a{color:#dcd4f0;border-bottom:1px dashed rgba(255,255,255,.3);}
+    .notice-item a:hover{color:#fff;}
+
+    /* 吸顶页头 */
+    .site-header{
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--fairy-border);
+      position:sticky;
+      top:37px;
+      z-index:90;
+    }
+    .header-inner{
+      max-width:1360px;
+      margin:0 auto;
+      padding:0 24px;
+      display:flex;
+      align-items:center;
+      gap:28px;
+      height:64px;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+    .logo-mark{
+      width:36px;height:36px;
+      flex-shrink:0;
+    }
+    .logo-text{
+      font-size:18px;
+      font-weight:800;
+      color:var(--fairy-primary-dark);
+      letter-spacing:.3px;
+    }
+    .main-nav{
+      display:flex;
+      gap:4px;
+      flex:1;
+      flex-wrap:wrap;
+    }
+    .main-nav a{
+      padding:6px 12px;
+      border-radius:var(--fairy-radius-btn);
+      font-size:14px;
+      color:var(--fairy-text-2);
+      transition:background .2s,color .2s;
+      white-space:nowrap;
+    }
+    .main-nav a:hover,.main-nav a:focus-visible{
+      background:var(--fairy-primary-light);
+      color:#fff;
+      outline:none;
+    }
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-shrink:0;
+    }
+    .search-box{
+      display:flex;
+      align-items:center;
+      background:var(--fairy-bg);
+      border:1px solid var(--fairy-border);
+      border-radius:999px;
+      padding:4px 4px 4px 14px;
+    }
+    .search-box input{
+      border:none;
+      background:transparent;
+      outline:none;
+      font-size:13px;
+      width:130px;
+      color:var(--fairy-text);
+      font-family:inherit;
+    }
+    .search-box input::placeholder{color:var(--fairy-text-3);}
+    .search-box button{
+      background:var(--fairy-primary);
+      color:#fff;
+      border:none;
+      border-radius:999px;
+      width:28px;height:28px;
+      display:grid;place-items:center;
+      font-size:14px;
+      transition:background .2s;
+    }
+    .search-box button:hover{background:var(--fairy-primary-dark);}
+    .btn-contribute{
+      background:var(--fairy-primary);
+      color:#fff;
+      border:none;
+      border-radius:var(--fairy-radius-btn);
+      padding:8px 16px;
+      font-size:13px;
+      font-weight:600;
+      transition:background .2s,transform .2s;
+      white-space:nowrap;
+    }
+    .btn-contribute:hover{background:var(--fairy-primary-dark);transform:translateY(-1px);}
+    .hamburger{
+      display:none;
+      background:none;border:none;
+      width:36px;height:36px;
+      position:relative;
+    }
+    .hamburger span{
+      display:block;width:20px;height:2px;
+      background:var(--fairy-text);
+      position:absolute;left:8px;
+      transition:transform .25s,opacity .25s;
+    }
+    .hamburger span:nth-child(1){top:11px;}
+    .hamburger span:nth-child(2){top:17px;}
+    .hamburger span:nth-child(3){top:23px;}
+    .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+    /* 首屏 */
+    .hero{
+      background:linear-gradient(135deg,#2a1f4d 0%,#4a3580 45%,#7c5cbf 100%);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-inner{
+      max-width:1360px;
+      margin:0 auto;
+      padding:64px 24px 56px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:40px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .hero h1{
+      font-size:clamp(28px,4vw,44px);
+      font-weight:900;
+      letter-spacing:1px;
+      line-height:1.25;
+      margin-bottom:18px;
+      text-shadow:0 2px 12px rgba(0,0,0,.2);
+    }
+    .hero-desc{
+      font-size:15px;
+      line-height:1.85;
+      color:#e8e2f7;
+      max-width:560px;
+      margin-bottom:26px;
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+    .hero-btn{
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:var(--fairy-radius-btn);
+      font-size:14px;
+      font-weight:600;
+      transition:background .2s,transform .2s,box-shadow .2s;
+    }
+    .hero-btn.primary{
+      background:#fff;
+      color:var(--fairy-primary-dark);
+    }
+    .hero-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25);}
+    .hero-btn.ghost{
+      border:1px solid rgba(255,255,255,.55);
+      color:#fff;
+    }
+    .hero-btn.ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);}
+    .hero-visual{
+      position:relative;
+      height:260px;
+    }
+    .hero-visual svg{
+      width:100%;height:100%;
+      animation:float 7s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-12px);}
+    }
+    .hero-stats{
+      display:flex;
+      gap:32px;
+      margin-top:32px;
+      flex-wrap:wrap;
+    }
+    .hero-stats div{display:flex;flex-direction:column;}
+    .hero-stats strong{font-size:22px;font-weight:800;color:#fff;}
+    .hero-stats span{font-size:12px;color:#cfc4ec;margin-top:2px;}
+
+    /* 主容器 三栏门户 */
+    .page-shell{
+      max-width:1360px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+    .portal-grid{
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr) 250px;
+      gap:28px;
+      padding:32px 0 48px;
+      align-items:start;
+    }
+    /* 左侧频道索引 */
+    .channel-index{
+      position:sticky;
+      top:130px;
+    }
+    .channel-index h2{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      color:var(--fairy-text-3);
+      margin-bottom:14px;
+      font-weight:700;
+    }
+    .channel-list li{
+      margin-bottom:2px;
+    }
+    .channel-list a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:8px 12px;
+      border-radius:var(--fairy-radius-tag);
+      font-size:14px;
+      color:var(--fairy-text-2);
+      transition:background .18s,color .18s;
+    }
+    .channel-list a:hover,.channel-list a:focus-visible{
+      background:var(--fairy-panel);
+      color:var(--fairy-primary-dark);
+      box-shadow:var(--fairy-shadow);
+      outline:none;
+    }
+    .channel-list a .count{
+      font-size:11px;
+      color:var(--fairy-text-3);
+      background:var(--fairy-bg);
+      border-radius:10px;
+      padding:1px 7px;
+    }
+
+    /* 中间主内容 */
+    .main-col{min-width:0;}
+    .section-block{
+      margin-bottom:44px;
+    }
+    .section-head{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:20px;
+      flex-wrap:wrap;
+    }
+    .section-head h2{
+      font-size:22px;
+      font-weight:800;
+      color:var(--fairy-text);
+      letter-spacing:.5px;
+      position:relative;
+      padding-left:14px;
+    }
+    .section-head h2::before{
+      content:"";
+      position:absolute;
+      left:0;top:6px;bottom:6px;
+      width:4px;
+      border-radius:2px;
+      background:var(--fairy-primary);
+    }
+    .section-head .more{
+      font-size:13px;
+      color:var(--fairy-primary-dark);
+      border-bottom:1px dashed var(--fairy-primary-light);
+    }
+    .section-head .more:hover{color:var(--fairy-primary);}
+
+    /* 概览 */
+    .domain-overview{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      padding:24px 28px;
+      box-shadow:var(--fairy-shadow);
+      font-size:14.5px;
+      color:var(--fairy-text-2);
+      line-height:1.9;
+    }
+    .domain-overview p + p{margin-top:12px;}
+    .domain-overview strong{color:var(--fairy-primary-dark);}
+
+    /* 精选卡片 */
+    .featured-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:18px;
+    }
+    .featured-card{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      overflow:hidden;
+      box-shadow:var(--fairy-shadow);
+      transition:transform .22s,box-shadow .22s;
+      display:flex;
+      flex-direction:column;
+    }
+    .featured-card:hover{
+      transform:translateY(-3px);
+      box-shadow:var(--fairy-shadow-hover);
+    }
+    .featured-card img{
+      width:100%;
+      aspect-ratio:4/3;
+      object-fit:cover;
+      background:var(--fairy-bg);
+    }
+    .featured-body{
+      padding:14px 16px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      flex:1;
+    }
+    .featured-body h3{
+      font-size:15.5px;
+      font-weight:700;
+      line-height:1.4;
+    }
+    .featured-tags{display:flex;flex-wrap:wrap;gap:6px;}
+    .tag{
+      font-size:11px;
+      padding:2px 8px;
+      border-radius:var(--fairy-radius-tag);
+      background:var(--fairy-bg);
+      color:var(--fairy-primary-dark);
+      font-weight:500;
+    }
+    .tag.hot{background:#fdecec;color:#c0392b;}
+    .featured-body p{
+      font-size:13px;
+      color:var(--fairy-text-3);
+      line-height:1.65;
+      flex:1;
+    }
+    .featured-meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-size:12px;
+      color:var(--fairy-text-3);
+      border-top:1px solid var(--fairy-border);
+      padding-top:10px;
+    }
+    .featured-meta .score{color:var(--fairy-primary-dark);font-weight:700;}
+
+    /* 更新列表 */
+    .update-list{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      box-shadow:var(--fairy-shadow);
+      overflow:hidden;
+    }
+    .update-item{
+      display:flex;
+      gap:14px;
+      padding:14px 20px;
+      border-bottom:1px solid var(--fairy-border);
+      transition:background .18s;
+      align-items:flex-start;
+    }
+    .update-item:last-child{border-bottom:none;}
+    .update-item:hover{background:#faf8ff;}
+    .update-badge{
+      flex-shrink:0;
+      font-size:11px;
+      font-weight:700;
+      padding:2px 8px;
+      border-radius:var(--fairy-radius-tag);
+      background:var(--fairy-primary-light);
+      color:#fff;
+      margin-top:3px;
+      white-space:nowrap;
+    }
+    .update-body{min-width:0;}
+    .update-body h3{
+      font-size:14.5px;
+      font-weight:600;
+      margin-bottom:3px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .update-body h3 a:hover{color:var(--fairy-primary-dark);}
+    .update-body p{
+      font-size:13px;
+      color:var(--fairy-text-3);
+      line-height:1.6;
+    }
+    .update-body time{
+      font-size:11px;
+      color:var(--fairy-text-3);
+      margin-left:auto;
+      flex-shrink:0;
+      white-space:nowrap;
+    }
+
+    /* 分类入口 */
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+      gap:12px;
+    }
+    .category-card{
+      background:var(--fairy-panel);
+      border:1px solid var(--fairy-border);
+      border-radius:var(--fairy-radius-card);
+      padding:16px 18px;
+      transition:border-color .2s,box-shadow .2s,transform .2s;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .category-card:hover{
+      border-color:var(--fairy-primary-light);
+      box-shadow:var(--fairy-shadow);
+      transform:translateY(-2px);
+    }
+    .category-card h3{
+      font-size:15px;
+      font-weight:700;
+      color:var(--fairy-text);
+    }
+    .category-card span{
+      font-size:12px;
+      color:var(--fairy-text-3);
+    }
+
+    /* 深度解析 */
+    .deep-dive{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      padding:28px 30px;
+      box-shadow:var(--fairy-shadow);
+    }
+    .deep-dive h3{
+      font-size:18px;
+      font-weight:800;
+      margin:24px 0 10px;
+      color:var(--fairy-primary-dark);
+    }
+    .deep-dive h3:first-child{margin-top:0;}
+    .deep-dive p{
+      font-size:14.5px;
+      color:var(--fairy-text-2);
+      line-height:1.9;
+      margin-bottom:12px;
+    }
+    .deep-dive ul{
+      margin:8px 0 16px 4px;
+    }
+    .deep-dive li{
+      font-size:14px;
+      color:var(--fairy-text-2);
+      line-height:1.8;
+      padding-left:18px;
+      position:relative;
+      margin-bottom:6px;
+    }
+    .deep-dive li::before{
+      content:"◆";
+      position:absolute;
+      left:0;
+      color:var(--fairy-primary-light);
+      font-size:10px;
+      top:4px;
+    }
+    .deep-dive strong{color:var(--fairy-primary-dark);}
+
+    /* 体验指南 */
+    .guide-steps{
+      counter-reset:step;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .guide-step{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      padding:18px 22px 18px 64px;
+      position:relative;
+      box-shadow:var(--fairy-shadow);
+    }
+    .guide-step::before{
+      counter-increment:step;
+      content:counter(step);
+      position:absolute;
+      left:20px;top:18px;
+      width:30px;height:30px;
+      background:var(--fairy-primary);
+      color:#fff;
+      border-radius:50%;
+      display:grid;place-items:center;
+      font-weight:800;
+      font-size:14px;
+    }
+    .guide-step h3{
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .guide-step p{
+      font-size:13.5px;
+      color:var(--fairy-text-3);
+      line-height:1.7;
+    }
+
+    /* FAQ */
+    .faq-list{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      box-shadow:var(--fairy-shadow);
+      overflow:hidden;
+    }
+    .faq-list details{
+      border-bottom:1px solid var(--fairy-border);
+    }
+    .faq-list details:last-child{border-bottom:none;}
+    .faq-list summary{
+      padding:16px 22px;
+      font-size:14.5px;
+      font-weight:600;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      transition:background .18s;
+    }
+    .faq-list summary::-webkit-details-marker{display:none;}
+    .faq-list summary::before{
+      content:"+";
+      font-size:18px;
+      font-weight:400;
+      color:var(--fairy-primary);
+      width:18px;
+      text-align:center;
+      flex-shrink:0;
+    }
+    .faq-list details[open] summary::before{content:"−";}
+    .faq-list summary:hover{background:#faf8ff;}
+    .faq-list .faq-answer{
+      padding:0 22px 18px 50px;
+      font-size:13.5px;
+      color:var(--fairy-text-2);
+      line-height:1.85;
+    }
+
+    /* 用户评论 */
+    .comment-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+      gap:14px;
+    }
+    .comment-card{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      padding:14px 16px;
+      box-shadow:var(--fairy-shadow);
+      font-size:13px;
+      line-height:1.75;
+      color:var(--fairy-text-2);
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .comment-user{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color:var(--fairy-text-3);
+    }
+    .comment-avatar{
+      width:26px;height:26px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--fairy-primary-light),var(--fairy-primary));
+      color:#fff;
+      display:grid;place-items:center;
+      font-size:11px;
+      font-weight:700;
+      flex-shrink:0;
+    }
+    .comment-user strong{color:var(--fairy-text);font-size:12.5px;}
+
+    /* 资讯 */
+    .news-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .news-item{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      padding:16px 20px;
+      box-shadow:var(--fairy-shadow);
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+    }
+    .news-item time{
+      flex-shrink:0;
+      font-size:12px;
+      color:var(--fairy-primary-dark);
+      font-weight:700;
+      background:var(--fairy-bg);
+      border-radius:var(--fairy-radius-tag);
+      padding:4px 10px;
+      white-space:nowrap;
+    }
+    .news-item h3{
+      font-size:14.5px;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .news-item p{
+      font-size:13px;
+      color:var(--fairy-text-3);
+      line-height:1.65;
+    }
+
+    /* 相关推荐 */
+    .related-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .related-tags a{
+      background:var(--fairy-panel);
+      border:1px solid var(--fairy-border);
+      border-radius:999px;
+      padding:7px 18px;
+      font-size:13px;
+      color:var(--fairy-text-2);
+      transition:background .18s,color .18s,border-color .18s;
+    }
+    .related-tags a:hover{
+      background:var(--fairy-primary);
+      color:#fff;
+      border-color:var(--fairy-primary);
+    }
+
+    /* 补充榜单 */
+    .rank-list{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      box-shadow:var(--fairy-shadow);
+      overflow:hidden;
+    }
+    .rank-item{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:13px 20px;
+      border-bottom:1px solid var(--fairy-border);
+      transition:background .18s;
+    }
+    .rank-item:last-child{border-bottom:none;}
+    .rank-item:hover{background:#faf8ff;}
+    .rank-num{
+      width:24px;height:24px;
+      flex-shrink:0;
+      display:grid;place-items:center;
+      border-radius:6px;
+      font-size:12px;
+      font-weight:800;
+      background:var(--fairy-bg);
+      color:var(--fairy-text-3);
+    }
+    .rank-item:nth-child(1) .rank-num{background:#f5c542;color:#fff;}
+    .rank-item:nth-child(2) .rank-num{background:#b8b8c8;color:#fff;}
+    .rank-item:nth-child(3) .rank-num{background:#d4a373;color:#fff;}
+    .rank-body{flex:1;min-width:0;}
+    .rank-body h3{font-size:14px;font-weight:600;}
+    .rank-body p{font-size:12px;color:var(--fairy-text-3);}
+    .rank-value{font-size:12px;color:var(--fairy-primary-dark);font-weight:700;flex-shrink:0;}
+
+    /* 右侧辅助栏 */
+    .aux-col{position:sticky;top:130px;display:flex;flex-direction:column;gap:24px;}
+    .aux-panel{
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      padding:18px 20px;
+      box-shadow:var(--fairy-shadow);
+    }
+    .aux-panel h2{
+      font-size:14px;
+      font-weight:800;
+      color:var(--fairy-text);
+      margin-bottom:14px;
+      padding-bottom:10px;
+      border-bottom:1px solid var(--fairy-border);
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .aux-panel h2::before{
+      content:"";
+      width:6px;height:6px;
+      border-radius:50%;
+      background:var(--fairy-primary);
+    }
+    .hot-list li{
+      display:flex;
+      gap:10px;
+      padding:8px 0;
+      border-bottom:1px dashed var(--fairy-border);
+      font-size:13px;
+      align-items:flex-start;
+    }
+    .hot-list li:last-child{border-bottom:none;}
+    .hot-list .hot-num{
+      font-weight:800;
+      font-size:12px;
+      color:var(--fairy-primary-light);
+      width:16px;
+      flex-shrink:0;
+      text-align:center;
+    }
+    .hot-list a{color:var(--fairy-text-2);line-height:1.5;}
+    .hot-list a:hover{color:var(--fairy-primary-dark);}
+    .update-stream li{
+      padding:8px 0;
+      border-bottom:1px dashed var(--fairy-border);
+      font-size:12.5px;
+      color:var(--fairy-text-2);
+    }
+    .update-stream li:last-child{border-bottom:none;}
+    .update-stream time{
+      display:block;
+      font-size:11px;
+      color:var(--fairy-text-3);
+      margin-top:2px;
+    }
+    .contribute-box{
+      background:linear-gradient(145deg,#efe8ff,#f8f5ff);
+      border:1px dashed var(--fairy-primary-light);
+      border-radius:var(--fairy-radius-card);
+      padding:18px 20px;
+      text-align:center;
+    }
+    .contribute-box h2{
+      font-size:14px;
+      font-weight:800;
+      color:var(--fairy-primary-dark);
+      margin-bottom:8px;
+      border:none;
+      padding:0;
+      justify-content:center;
+    }
+    .contribute-box h2::before{display:none;}
+    .contribute-box p{
+      font-size:12.5px;
+      color:var(--fairy-text-3);
+      line-height:1.7;
+      margin-bottom:12px;
+    }
+    .contribute-box button{
+      background:var(--fairy-primary);
+      color:#fff;
+      border:none;
+      border-radius:var(--fairy-radius-btn);
+      padding:8px 20px;
+      font-size:13px;
+      font-weight:600;
+      transition:background .2s;
+    }
+    .contribute-box button:hover{background:var(--fairy-primary-dark);}
+
+    /* 页尾 */
+    .site-footer{
+      background:#1e1a2e;
+      color:#b8b2cc;
+      font-size:13px;
+      margin-top:20px;
+    }
+    .footer-inner{
+      max-width:1360px;
+      margin:0 auto;
+      padding:48px 24px 32px;
+    }
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr 1fr;
+      gap:32px;
+      margin-bottom:36px;
+    }
+    .footer-brand .logo-text{color:#fff;font-size:17px;display:block;margin-bottom:10px;}
+    .footer-brand p{line-height:1.8;color:#8f88a8;font-size:12.5px;}
+    .footer-col h3{
+      font-size:13px;
+      color:#fff;
+      margin-bottom:12px;
+      font-weight:700;
+    }
+    .footer-col li{margin-bottom:8px;}
+    .footer-col a{color:#8f88a8;font-size:12.5px;transition:color .18s;}
+    .footer-col a:hover{color:#fff;}
+    .footer-bottom{
+      border-top:1px solid #332d4a;
+      padding-top:20px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:#6b6488;
+      font-size:12px;
+    }
+
+    /* 回到顶部 */
+    .back-top{
+      position:fixed;
+      right:24px;bottom:24px;
+      width:42px;height:42px;
+      border-radius:50%;
+      background:var(--fairy-primary);
+      color:#fff;
+      border:none;
+      display:grid;place-items:center;
+      box-shadow:var(--fairy-shadow-hover);
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(10px);
+      transition:opacity .25s,visibility .25s,transform .25s,background .2s;
+      z-index:80;
+      font-size:18px;
+    }
+    .back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+    .back-top:hover{background:var(--fairy-primary-dark);}
+
+    /* 搜索无结果 */
+    .no-result{
+      padding:24px;
+      text-align:center;
+      color:var(--fairy-text-3);
+      font-size:14px;
+      background:var(--fairy-panel);
+      border-radius:var(--fairy-radius-card);
+      display:none;
+    }
+
+    /* 响应式 */
+    @media(max-width:1120px){
+      .portal-grid{grid-template-columns:160px minmax(0,1fr);}
+      .aux-col{display:none;}
+    }
+    @media(max-width:1024px){
+      .hero-inner{grid-template-columns:1fr;gap:24px;}
+      .hero-visual{height:180px;display:none;}
+      .portal-grid{grid-template-columns:1fr;gap:24px;}
+      .channel-index{position:static;}
+      .channel-list{display:flex;flex-wrap:wrap;gap:6px;}
+      .channel-list li{margin-bottom:0;}
+      .channel-list a{padding:6px 12px;background:var(--fairy-panel);box-shadow:var(--fairy-shadow);}
+      .header-inner{gap:14px;}
+      .main-nav{display:none;}
+      .main-nav.open{
+        display:flex;
+        position:absolute;
+        top:100%;left:0;right:0;
+        background:var(--fairy-panel);
+        flex-direction:column;
+        padding:12px 24px;
+        box-shadow:var(--fairy-shadow-hover);
+        gap:2px;
+        z-index:95;
+      }
+      .main-nav.open a{padding:10px 14px;}
+      .hamburger{display:block;}
+      .search-box input{width:90px;}
+      .footer-top{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:740px){
+      .header-inner{height:56px;padding:0 16px;}
+      .search-box{display:none;}
+      .btn-contribute{padding:6px 12px;font-size:12px;}
+      .notice-inner{padding:0 16px;gap:10px;font-size:12px;}
+      .notice-item:nth-child(4){display:none;}
+      .page-shell{padding:0 16px;}
+      .hero-inner{padding:40px 16px 32px;}
+      .hero h1{font-size:26px;}
+      .hero-stats{gap:20px;}
+      .featured-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;}
+      .category-grid{grid-template-columns:repeat(2,1fr);}
+      .comment-grid{grid-template-columns:1fr;}
+      .footer-top{grid-template-columns:1fr;gap:24px;}
+      .deep-dive{padding:20px;}
+      .news-item{flex-direction:column;gap:8px;}
+      .news-item time{align-self:flex-start;}
+      .back-top{right:16px;bottom:16px;}
+      .faq-list .faq-answer{padding-left:22px;}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+    }
+    /* 焦点可见 */
+    a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{
+      outline:2px solid var(--fairy-primary);
+      outline-offset:2px;
+    }
+    /* 遮罩 */
+    .nav-overlay{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(20,15,35,.45);
+      z-index:85;
+    }
+    .nav-overlay.show{display:block;}
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="notice-bar" id="noticeBar">
+    <div class="notice-inner">
+      <span class="notice-brand">妖精192.com</span>
+      <span class="notice-sep">/</span>
+      <span class="notice-item"><time datetime="2026-11-08">11月8日</time><a href="/#update">《林间契约》第47话“银铃的试炼”更新</a></span>
+      <span class="notice-item"><a href="/#featured">妖精题材新作《雾隐花园》条目上线</a></span>
+      <span class="notice-item"><a href="/#rank">本周妖精角色人气榜：艾露莎蝉联第一</a></span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo-wrap" href="/" aria-label="妖精192.com 首页">
+        <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 3L21.5 12.5L31 14L24 20.5L26.5 30L18 25L9.5 30L12 20.5L5 14L14.5 12.5L18 3Z" fill="#7c5cbf" stroke="#4a3580" stroke-width="1.2" stroke-linejoin="round"/>
+          <circle cx="18" cy="17" r="2.2" fill="#f6f3fc"/>
+        </svg>
+        <span class="logo-text">妖精192.com</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#featured">精选条目</a>
+        <a href="/#update">更新速递</a>
+        <a href="/#category">分类索引</a>
+        <a href="/#deepdive">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">读者评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#rank">人气榜</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="搜索条目…" aria-label="搜索内容">
+          <button type="button" id="searchBtn" aria-label="搜索">🔍</button>
+        </div>
+        <button class="btn-contribute" type="button" id="contributeBtn">投稿</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>妖精192.com</h1>
+        <p class="hero-desc">
+          汇聚妖精题材的漫画连载、动画剧集、独立游戏与轻小说条目。从林间契约到银铃试炼，从角色人气到版本更新，按类型、连载进度和读者评分横向比对，适合想系统追更或补完经典作品的读者。
+        </p>
+        <div class="hero-actions">
+          <a class="hero-btn primary" href="/#featured">浏览精选条目</a>
+          <a class="hero-btn ghost" href="/#update">查看今日更新</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>326</strong><span>收录条目</span></div>
+          <div><strong>18</strong><span>本周更新</span></div>
+          <div><strong>11月8日</strong><span>最近维护</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#c9b8f0" stop-opacity=".5"/>
+              <stop offset="100%" stop-color="#7c5cbf" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="150" cy="150" rx="130" ry="100" fill="url(#glow)"/>
+          <circle cx="150" cy="120" r="52" stroke="#e8e2f7" stroke-width="1.4" stroke-dasharray="4 6" opacity=".7"/>
+          <path d="M150 68 L162 100 L196 104 L170 126 L178 160 L150 142 L122 160 L130 126 L104 104 L138 100 Z" fill="#a38cd9" opacity=".9"/>
+          <circle cx="150" cy="120" r="6" fill="#f6f3fc"/>
+          <circle cx="90" cy="80" r="3" fill="#e8e2f7" opacity=".8"/>
+          <circle cx="220" cy="70" r="4" fill="#e8e2f7" opacity=".6"/>
+          <circle cx="70" cy="180" r="3.5" fill="#e8e2f7" opacity=".5"/>
+          <circle cx="235" cy="190" r="3" fill="#e8e2f7" opacity=".7"/>
+          <path d="M40 220 Q150 250 260 220" stroke="#a38cd9" stroke-width="1" opacity=".4" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主体三栏 -->
+  <div class="page-shell">
+    <div class="portal-grid">
+
+      <!-- 左栏频道索引 -->
+      <aside class="channel-index" aria-label="频道索引">
+        <h2>频道索引</h2>
+        <ul class="channel-list">
+          <li><a href="/#featured">漫画连载 <span class="count">86</span></a></li>
+          <li><a href="/#featured">动画剧集 <span class="count">54</span></a></li>
+          <li><a href="/#featured">独立游戏 <span class="count">42</span></a></li>
+          <li><a href="/#featured">轻小说 <span class="count">38</span></a></li>
+          <li><a href="/#update">更新速递 <span class="count">18</span></a></li>
+          <li><a href="/#category">角色图鉴 <span class="count">72</span></a></li>
+          <li><a href="/#rank">人气榜单 <span class="count">10</span></a></li>
+          <li><a href="/#deepdive">深度解析 <span class="count">6</span></a></li>
+          <li><a href="/#faq">常见问答 <span class="count">6</span></a></li>
+          <li><a href="/#comments">读者评论 <span class="count">16</span></a></li>
+          <li><a href="/#news">相关资讯 <span class="count">6</span></a></li>
+        </ul>
+      </aside>
+
+      <!-- 中间主内容 -->
+      <main class="main-col">
+
+        <!-- 1. 领域概览 -->
+        <section class="section-block" id="overview" aria-labelledby="overviewTitle">
+          <div class="section-head">
+            <h2 id="overviewTitle">妖精题材内容概览</h2>
+          </div>
+          <div class="domain-overview">
+            <p>
+              妖精题材在中文内容圈里大致分成四条线：日系漫画连载、动画剧集、独立游戏和轻小说。漫画这边，<strong>《林间契约》</strong>以“契约精灵”设定撑起长线连载，目前更新到第47话；<strong>《雾隐花园》</strong>走的是雾之妖精与人类园丁的日常路线，2026年10月刚上线第1卷。动画方面，<strong>《银铃的试炼》</strong>第二季在10月26日开播，B站同步更新，前三集弹幕量累计4.2万条。独立游戏里，<strong>《妖精工坊：炼金与契约》</strong>在Steam拿到“特别好评”，1.8万条评测中好评率91%。轻小说则有<strong>《妖精图书馆的夜班管理员》</strong>这类偏治愈向的作品，第3卷于11月5日发售。
+            </p>
+            <p>
+              值得留意的方向有两个：一是“妖精×职业”的混搭设定正在变多，炼金、园丁、图书馆管理员都成了常见身份；二是短篇动画合集<strong>《森之短歌》</strong>用每集12分钟的篇幅讲一个独立妖精故事，适合不想追长线的观众。角色人气层面，艾露莎（《林间契约》）、银铃（《银铃的试炼》）、雾音（《雾隐花园》）是目前讨论量最集中的三个名字，相关同人图在Pixiv的标签投稿量过去30天分别新增约1200、860、540件。
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section class="section-block" id="featured" aria-labelledby="featuredTitle">
+          <div class="section-head">
+            <h2 id="featuredTitle">精选条目推荐</h2>
+            <a class="more" href="/#category">查看分类索引 →</a>
+          </div>
+          <div class="featured-grid">
+
+            <article class="featured-card">
+              <img src="https://picsum.photos/seed/linjian47/400/300" width="400" height="300" loading="lazy" alt="《林间契约》第47话漫画封面，银铃在森林中展开试炼">
+              <div class="featured-body">
+                <h3>林间契约 第47话</h3>
+                <div class="featured-tags"><span class="tag">漫画连载</span><span class="tag">契约精灵</span><span class="tag hot">今日更新</span></div>
+                <p>银铃的试炼正式开启，艾露莎与人类主角的契约出现裂痕。本话用24页交代了试炼规则和失败代价，结尾分镜信息量很大。</p>
+                <div class="featured-meta"><span>更新：2026-11-08</span><span class="score">9.1分</span></div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <img src="https://picsum.photos/seed/wuyin01/400/300" width="400" height="300" loading="lazy" alt="《雾隐花园》第1卷封面，雾音站在花园拱门前">
+              <div class="featured-body">
+                <h3>雾隐花园 第1卷</h3>
+                <div class="featured-tags"><span class="tag">漫画新作</span><span class="tag">日常治愈</span><span class="tag">雾之妖精</span></div>
+                <p>雾音被人类园丁误认成害虫，两人从互相提防到共同打理花园。第1卷收录前8话，画风偏水彩，节奏慢但不闷。</p>
+                <div class="featured-meta"><span>上线：2026-10-18</span><span class="score">8.7分</span></div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <img src="https://picsum.photos/seed/yinlingS2/400/300" width="400" height="300" loading="lazy" alt="《银铃的试炼》第二季动画主视觉，银铃持铃站在断崖">
+              <div class="featured-body">
+                <h3>银铃的试炼 第二季</h3>
+                <div class="featured-tags"><span class="tag">动画剧集</span><span class="tag">战斗</span><span class="tag">B站同步</span></div>
+                <p>第二季把舞台从森林搬到断崖遗迹，银铃的铃铛能力增加了“音域消耗”限制。前三集打斗作画稳定，第3集有长镜头。</p>
+                <div class="featured-meta"><span>开播：2026-10-26</span><span class="score">8.9分</span></div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <img src="https://picsum.photos/seed/yaojinggongfang/400/300" width="400" height="300" loading="lazy" alt="《妖精工坊：炼金与契约》游戏界面，炼金锅与妖精助手">
+              <div class="featured-body">
+                <h3>妖精工坊：炼金与契约</h3>
+                <div class="featured-tags"><span class="tag">独立游戏</span><span class="tag">模拟经营</span><span class="tag">炼金</span></div>
+                <p>炼金配方和妖精契约自由度是卖点，1.8万条Steam评测好评率91%。11月6日更新了“冬之材料”包，新增12种配方。</p>
+                <div class="featured-meta"><span>更新：2026-11-06</span><span class="score">91%好评</span></div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <img src="https://picsum.photos/seed/yaojingtushuguan/400/300" width="400" height="300" loading="lazy" alt="《妖精图书馆的夜班管理员》第3卷封面，夜班妖精在书架间">
+              <div class="featured-body">
+                <h3>妖精图书馆的夜班管理员 第3卷</h3>
+                <div class="featured-tags"><span class="tag">轻小说</span><span class="tag">治愈</span><span class="tag">图书馆</span></div>
+                <p>第3卷引入“会吃掉书页的妖精”新角色，主角要在一夜之间找回被撕掉的章节。11月5日发售，首周销量约6800册。</p>
+                <div class="featured-meta"><span>发售：2026-11-05</span><span class="score">8.5分</span></div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <img src="https://picsum.photos/seed/senzhiduange/400/300" width="400" height="300" loading="lazy" alt="短篇动画《森之短歌》海报，多个妖精剪影">
+              <div class="featured-body">
+                <h3>森之短歌 短篇合集</h3>
+                <div class="featured-tags"><span class="tag">动画合集</span><span class="tag">单元剧</span><span class="tag">12分钟</span></div>
+                <p>每集12分钟讲一个独立妖精故事，已上线6集。第4集“扫落叶的妖精”在豆瓣标记人数破万，是目前讨论度最高的一集。</p>
+                <div class="featured-meta"><span>更新：2026-11-02</span><span class="score">8.3分</span></div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <img src="https://picsum.photos/seed/ailusha/400/300" width="400" height="300" loading="lazy" alt="《林间契约》角色艾露莎立绘，站在古树前">
+              <div class="featured-body">
+                <h3>艾露莎 · 角色图鉴</h3>
+                <div class="featured-tags"><span class="tag">角色</span><span class="tag">契约精灵</span><span class="tag">人气第一</span></div>
+                <p>《林间契约》女主，能力是“根须感知”。本周角色人气榜排第一，Pixiv标签“艾露莎”过去30天新增约1200件投稿。</p>
+                <div class="featured-meta"><span>榜期：2026-11-08</span><span class="score">TOP 1</span></div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <img src="https://picsum.photos/seed/yinlingrole/400/300" width="400" height="300" loading="lazy" alt="《银铃的试炼》银铃角色图，铃铛悬浮在手中">
+              <div class="featured-body">
+                <h3>银铃 · 角色图鉴</h3>
+                <div class="featured-tags"><span class="tag">角色</span><span class="tag">铃铛使</span><span class="tag">第二季</span></div>
+                <p>第二季新增“音域消耗”设定后，银铃的战斗风格从远程压制转向节奏控制。角色人气榜本周排第二，仅次于艾露莎。</p>
+                <div class="featured-meta"><span>榜期：2026-11-08</span><span class="score">TOP 2</span></div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 -->
+        <section class="section-block" id="update" aria-labelledby="updateTitle">
+          <div class="section-head">
+            <h2 id="updateTitle">今日更新速递</h2>
+          </div>
+          <div class="update-list">
+
+            <div class="update-item">
+              <span class="update-badge">漫画</span>
+              <div class="update-body">
+                <h3><a href="/#featured">林间契约 第47话「银铃的试炼」</a></h3>
+                <p>试炼规则公开：三日内找到古树之心，否则契约解除。艾露莎第一次在主线里露出犹豫表情。</p>
+              </div>
+              <time datetime="2026-11-08">11-08</time>
+            </div>
+
+            <div class="update-item">
+              <span class="update-badge">动画</span>
+              <div class="update-body">
+                <h3><a href="/#featured">银铃的试炼 第二季 第3话</a></h3>
+                <p>断崖遗迹战，银铃用“三段音域”反制石像鬼。B站弹幕峰值出现在18分42秒的铃铛全屏镜头。</p>
+              </div>
+              <time datetime="2026-11-07">11-07</time>
+            </div>
+
+            <div class="update-item">
+              <span class="update-badge">游戏</span>
+              <div class="update-body">
+                <h3><a href="/#featured">妖精工坊：炼金与契约 1.4.2 补丁</a></h3>
+                <p>新增“冬之材料”12种配方，修复了契约妖精在雨天场景卡进树洞的bug。Steam公告显示更新包约860MB。</p>
+              </div>
+              <time datetime="2026-11-06">11-06</time>
+            </div>
+
+            <div class="update-item">
+              <span class="update-badge">轻小说</span>
+              <div class="update-body">
+                <h3><a href="/#featured">妖精图书馆的夜班管理员 第3卷</a></h3>
+                <p>“吃书页的妖精”登场，第3卷共312页，附赠4页短篇《闭馆后的茶会》。首周销量约6800册。</p>
+              </div>
+              <time datetime="2026-11-05">11-05</time>
+            </div>
+
+            <div class="update-item">
+              <span class="update-badge">漫画</span>
+              <div class="update-body">
+                <h3><a href="/#featured">雾隐花园 第9话</a></h3>
+                <p>雾音第一次主动现身，园丁老陈的反应是拿喷壶。本话标题《害虫还是园丁》在评论区被反复引用。</p>
+              </div>
+              <time datetime="2026-11-04">11-04</time>
+            </div>
+
+            <div class="update-item">
+              <span class="update-badge">动画</span>
+              <div class="update-body">
+                <h3><a href="/#featured">森之短歌 第6集「守灯妖精」</a></h3>
+                <p>讲一只负责看守灯塔的妖精，12分钟里只说了三句台词。片尾曲换了新版本，演唱者未公开。</p>
+              </div>
+              <time datetime="2026-11-02">11-02</time>
+            </div>
+
+            <div class="update-item">
+              <span class="update-badge">图鉴</span>
+              <div class="update-body">
+                <h3><a href="/#rank">本周妖精角色人气榜更新</a></h3>
+                <p>艾露莎、银铃、雾音分列前三。第四名是《森之短歌》第4集的“扫落叶妖精”，首次进榜。</p>
+              </div>
+              <time datetime="2026-11-08">11-08</time>
+            </div>
+
+            <div class="update-item">
+              <span class="update-badge">活动</span>
+              <div class="update-body">
+                <h3><a href="/#comments">“我最喜欢的妖精台词”征集</a></h3>
+                <p>评论区已收到86条投稿，点赞最高的是《林间契约》第32话艾露莎那句“树不会跑，人会”。</p>
+              </div>
+              <time datetime="2026-11-03">11-03</time>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section class="section-block" id="category" aria-labelledby="categoryTitle">
+          <div class="section-head">
+            <h2 id="categoryTitle">按类别查找妖精内容</h2>
+          </div>
+          <div class="category-grid">
+            <a class="category-card" href="/#featured"><h3>漫画连载</h3><span>86部 · 含林间契约、雾隐花园</span></a>
+            <a class="category-card" href="/#featured"><h3>动画剧集</h3><span>54部 · 含银铃的试炼、森之短歌</span></a>
+            <a class="category-card" href="/#featured"><h3>独立游戏</h3><span>42款 · 含妖精工坊、森之回廊</span></a>
+            <a class="category-card" href="/#featured"><h3>轻小说</h3><span>38部 · 含妖精图书馆夜班</span></a>
+            <a class="category-card" href="/#rank"><h3>角色图鉴</h3><span>72位 · 艾露莎、银铃、雾音</span></a>
+            <a class="category-card" href="/#rank"><h3>人气榜单</h3><span>10条 · 每周日更新</span></a>
+            <a class="category-card" href="/#deepdive"><h3>设定解析</h3><span>契约、铃铛、雾之法则</span></a>
+            <a class="category-card" href="/#guide"><h3>入坑指南</h3><span>按类型、篇幅、门槛筛选</span></a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析 -->
+        <section class="section-block" id="deepdive" aria-labelledby="deepdiveTitle">
+          <div class="section-head">
+            <h2 id="deepdiveTitle">妖精题材的设定差异与评判维度</h2>
+          </div>
+          <div class="deep-dive">
+
+            <h3>契约设定的三种常见写法</h3>
+            <p>
+              《林间契约》把契约写成双向约束：精灵借出力量，人类付出“感官记忆”，第47话里艾露莎的犹豫正来自主角已开始遗忘童年气味。这种写法把代价具体化为可计数的记忆条目，读者能算出主角还剩几次机会。
+            </p>
+            <p>
+              《妖精工坊：炼金与契约》走的是游戏化契约：玩家在工坊里同时维护3到5只妖精的好感度，好感度低于30会触发“离家出走”，需要花3天游戏内时间找回。代价是时间，不是记忆。
+            </p>
+            <p>
+              《银铃的试炼》则把契约压到最低——银铃和人类搭档之间没有纸面契约，只有铃铛的“音域消耗”机制：每用一次大范围音域，铃铛会裂开一道细纹。第二季第3话之后，铃铛上已有4道裂纹。
+            </p>
+
+            <h3>角色人气的可核对结构</h3>
+            <p>
+              本周角色榜前三名的排序，可以拆成三个可查环节。第一，Pixiv标签投稿量：艾露莎约1200件、银铃约860件、雾音约540件。第二，B站相关视频播放中位数：艾露莎角色曲二创约8.7万、银铃战斗剪辑约6.2万、雾音日常向约3.9万。第三，条目内互动：本周《林间契约》第47话的评论数是《雾隐花园》第9话的2.3倍。
+            </p>
+            <p>
+              这三个环节里，投稿量反映创作热度，播放中位数反映路人关注度，评论数反映读者粘性。艾露莎三项都领先，银铃在播放量上接近但投稿量差一截，雾音则明显偏向“看过但不产出”的类型。单看一项容易误判。
+            </p>
+
+            <h3>短篇合集与长线连载的取舍</h3>
+            <p>
+              《森之短歌》每集12分钟，6集加起来72分钟，相当于《银铃的试炼》第二季前三集的长度。短篇的优势是单集闭环，第4集“扫落叶的妖精”即使没看过前3集也能直接看；劣势是角色留不住，第4集那只妖精目前只在角色图鉴里占一个条目，没有后续。
+            </p>
+            <p>
+              长线连载则相反。《林间契约》第47话的信息量，单看这一话会漏掉至少三处伏笔：艾露莎提到的“上一次试炼”、古树之心的位置、主角遗漏的童年记忆片段。补完前46话大约需要7到8小时。时间投入差了一个数量级，判断值不值得追，先看能不能接受这个时长。
+            </p>
+
+            <h3>更新节奏与追更成本</h3>
+            <p>
+              《林间契约》目前是周更，单话24页左右，遇到合刊会停一周。10月到11月的更新记录显示，第43话到第47话之间停更过一次，间隔9天。《雾隐花园》是双周更，第1卷8话用了约10周。《妖精图书馆的夜班管理员》按卷出，第2卷到第3卷间隔7个月。
+            </p>
+            <ul>
+              <li>周更作品适合固定时间追，断更风险中等；</li>
+              <li>双周更作品单话信息量更大，但容易忘记前情，建议配合条目页的“前情摘要”；</li>
+              <li>按卷出版的作品适合攒完再看，代价是讨论热度滞后。</li>
+            </ul>
+
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 -->
+        <section class="section-block" id="guide" aria-labelledby="guideTitle">
+          <div class="section-head">
+            <h2 id="guideTitle">从哪类妖精内容入手</h2>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <h3>先按可用时间筛类型</h3>
+              <p>单次能投入30分钟以内，优先《森之短歌》或《雾隐花园》单话；能保证每周固定两小时，再考虑《林间契约》这类周更长线。时间碎片化的人硬追长线，十有八九会断在中间。</p>
+            </div>
+            <div class="guide-step">
+              <h3>用前三话判断是否继续</h3>
+              <p>《银铃的试炼》第二季前三话已经给出完整的小高潮，看三话能判断打斗和节奏合不合口味。《雾隐花园》前三话还在铺垫，需要看到第5话雾音现身才算进入正题。不同作品的前三话权重不一样。</p>
+            </div>
+            <div class="guide-step">
+              <h3>比较条目时看三个数</h3>
+              <p>评分、更新频率、单话/单集时长。评分低于8分的作品不一定差，但需要多看一眼评论区有没有具体指出问题；更新频率决定追更成本；时长决定单次投入。三个数放在一起比，比只看评分靠谱。</p>
+            </div>
+            <div class="guide-step">
+              <h3>游戏先看差评关键词</h3>
+              <p>《妖精工坊：炼金与契约》的好评率91%，但差评里“后期材料重复”出现频率最高。如果在意中后期内容量，先翻差评前两页，比看宣传图有效。1.4.2补丁新增的冬之材料包，部分回应了重复问题。</p>
+            </div>
+            <div class="guide-step">
+              <h3>补完经典作品按出版顺序</h3>
+              <p>轻小说类如《妖精图书馆的夜班管理员》，第1卷交代设定、第2卷展开人物、第3卷引入新妖精。跳卷阅读会漏掉“夜班规则”的两次修订。按卷序读，每卷约2到3小时。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="section-block" id="faq" aria-labelledby="faqTitle">
+          <div class="section-head">
+            <h2 id="faqTitle">关于妖精题材的常见问题</h2>
+          </div>
+          <div class="faq-list">
+
+            <details>
+              <summary>《林间契约》第47话的试炼规则是什么？</summary>
+              <div class="faq-answer">规则在正话第6页到第8页交代：银铃需要在三天内找到古树之心，每晚只能使用一次根须感知。失败的话，艾露莎与主角的契约会解除，主角已经付出的感官记忆不退还。第47话结尾主角还剩两次感知机会。</div>
+            </details>
+
+            <details>
+              <summary>《银铃的试炼》第二季和第一季在设定上有什么不同？</summary>
+              <div class="faq-answer">第二季新增“音域消耗”机制：银铃每次使用大范围铃铛能力，铃铛会出现裂纹，累计到第6道裂纹时能力暂时失效。第一季没有这个限制，银铃可以连续释放。第二季第3话结束时铃铛上已有4道裂纹，按当前节奏，第5话前后可能触发失效。</div>
+            </details>
+
+            <details>
+              <summary>《妖精工坊：炼金与契约》后期材料重复吗？</summary>
+              <div class="faq-answer">1.4.2补丁之前，中期第3章到第5章有约14种材料需要反复采集，差评集中在这里。11月6日的补丁新增12种冬之材料配方，并调整了第4章的掉落表，重复采集的频次有所下降。目前Steam差评前两页仍能看到关于“第5章刷材料”的抱怨，但提及次数比10月少。</div>
+            </details>
+
+            <details>
+              <summary>《森之短歌》每一集是独立故事吗？</summary>
+              <div class="faq-answer">是。每集12分钟，角色、场景、时代都不共享，唯一的共同点是“妖精”这个身份。第4集“扫落叶的妖精”和第6集“守灯妖精”之间没有任何剧情关联。适合随机挑一集看，不需要按顺序。</div>
+            </details>
+
+            <details>
+              <summary>艾露莎为什么能连续三周排角色榜第一？</summary>
+              <div class="faq-answer">本周榜单统计周期是10月26日到11月8日。艾露莎在这段时间内有第46、47两话主线戏份，且第47话的“犹豫表情”在社交平台被单独截取传播。Pixiv投稿量同期新增约1200件，是第二名的1.4倍。戏份密度和截图传播叠加，撑住了排名。</div>
+            </details>
+
+            <details>
+              <summary>轻小说《妖精图书馆的夜班管理员》适合从第几卷开始看？</summary>
+              <div class="faq-answer">从第1卷开始。第2卷引入的“夜班规则修订”建立在第1卷已交代的旧规则上，跳读会看不懂第3卷里“吃书页的妖精”为什么能钻规则空子。第1卷约210页，2到3小时能读完。</div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section class="section-block" id="comments" aria-labelledby="commentsTitle">
+          <div class="section-head">
+            <h2 id="commentsTitle">读者在聊什么</h2>
+          </div>
+          <div class="comment-grid">
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">森</span><strong>森见不登校</strong></div>
+              <p>第47话那个结尾分镜，艾露莎的手停在半空，我盯了得有一分钟。比上一话打斗还戳。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">铃</span><strong>铃铛收藏家</strong></div>
+              <p>银铃第二季的裂纹设定挺聪明的，至少不用再看她无伤开大了。就是第3话作画有点赶，石像鬼那段有几帧崩。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">雾</span><strong>雾音单推人</strong></div>
+              <p>雾隐花园第9话园丁拿喷壶那段笑死，但仔细想想老陈那个反应其实很正常，谁看见会飞的虫子不先抄家伙。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">工</span><strong>工坊肝到三点</strong></div>
+              <p>冬之材料包还行，新配方有4个能用的。但第5章刷材料的问题还是没根治，我昨天又刷了四十分钟同样的树皮。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">短</span><strong>短歌只看一集</strong></div>
+              <p>就看了第4集扫落叶那个，挺舒服的。后面几集没追，感觉这种单元剧挑着看就行。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">图</span><strong>图书馆夜班</strong></div>
+              <p>第3卷比第2卷好，吃书页的妖精这个点子终于把“夜班”的设定用起来了。前两卷有点太温吞。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">榜</span><strong>榜单观察员</strong></div>
+              <p>艾露莎第一不意外，雾音能进前三我才惊讶。说明日常向现在确实吃香。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">合</span><strong>合刊受害者</strong></div>
+              <p>林间契约上上个月停更那九天，我每天刷一次更新页。周更党心脏受不了。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">声</span><strong>声控一枚</strong></div>
+              <p>银铃第3话18分42秒铃铛全屏那个镜头，配合音效我反复看了五遍。那段值得单独截出来。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">前</span><strong>前情提要党</strong></div>
+              <p>双周更的作品真的需要前情摘要，雾隐花园隔两周我就忘了上一话说啥。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">路</span><strong>路过打酱油</strong></div>
+              <p>不太看妖精题材，点进来是因为热搜。画风倒是都挺好看的。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">评</span><strong>评分纠结中</strong></div>
+              <p>森之短歌8.3我觉得偏高了，第5集那个故事有点散。第4集单独能打9分。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">图</span><strong>图鉴修修补补</strong></div>
+              <p>扫落叶妖精进榜第四，说明大家还是喜欢有生活感的角色。战斗系看多了会腻。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">契</span><strong>契约学研究者</strong></div>
+              <p>三套契约设定放一起比，林间契约的“感官记忆”代价最狠，因为它不可逆。工坊那个好感度掉下去还能刷回来。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">熬</span><strong>熬夜补番</strong></div>
+              <p>补前46话花了三个晚上，值。但确实不建议碎片时间补，会串戏。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">冷</span><strong>冷静发言</strong></div>
+              <p>91%好评听着高，但差评里说的材料问题是真的。买之前最好去翻翻差评，别只看宣传片。</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section class="section-block" id="news" aria-labelledby="newsTitle">
+          <div class="section-head">
+            <h2 id="newsTitle">妖精题材近期资讯</h2>
+          </div>
+          <div class="news-list">
+
+            <article class="news-item">
+              <time datetime="2026-11-08">2026-11-08</time>
+              <div>
+                <h3>《林间契约》单行本第9卷定于12月3日发售</h3>
+                <p>出版社公布的目录显示，第9卷收录第44话到第48话，比常规多收一话。附录页将首次公开古树之心的早期设定草图。</p>
+              </div>
+            </article>
+
+            <article class="news-item">
+              <time datetime="2026-11-07">2026-11-07</time>
+              <div>
+                <h3>《银铃的试炼》第二季第3话弹幕数破1.2万</h3>
+                <p>B站后台数据显示，该话24小时内弹幕量1.2万条，其中18分42秒的铃铛镜头集中了约2100条。制作组在官方账号转发了这一数据。</p>
+              </div>
+            </article>
+
+            <article class="news-item">
+              <time datetime="2026-11-06">2026-11-06</time>
+              <div>
+                <h3>妖精工坊1.4.2补丁上线，冬之材料包约860MB</h3>
+                <p>补丁新增12种配方，调整第4章掉落表。开发者在Steam社区回复称第5章材料问题将在1.5.0版本继续处理，时间未定。</p>
+              </div>
+            </article>
+
+            <article class="news-item">
+              <time datetime="2026-11-05">2026-11-05</time>
+              <div>
+                <h3>《妖精图书馆的夜班管理员》第3卷首周销量约6800册</h3>
+                <p>出版社渠道数据显示，第3卷首周销量比第2卷同期高约18%。第2卷首周约5760册。附赠短篇《闭馆后的茶会》在读者群被单独讨论。</p>
+              </div>
+            </article>
+
+            <article class="news-item">
+              <time datetime="2026-11-03">2026-11-03</time>
+              <div>
+                <h3>《森之短歌》第6集更换片尾曲，演唱者未公开</h3>
+                <p>第6集片尾字幕只写了“片尾曲演唱：未公开”，制作组在社交平台确认是新人，表示会在第8集后公布。第6集目前豆瓣标记人数约4200。</p>
+              </div>
+            </article>
+
+            <article class="news-item">
+              <time datetime="2026-10-30">2026-10-30</time>
+              <div>
+                <h3>《雾隐花园》作者确认第10话将进入“冬季篇”</h3>
+                <p>作者在个人账号发布分镜草稿，画面里花园覆雪，雾音换了一身厚斗篷。草稿配文“第10话开始冷起来了”，评论中读者追问老陈会不会一起过冬。</p>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section class="section-block" id="related" aria-labelledby="relatedTitle">
+          <div class="section-head">
+            <h2 id="relatedTitle">相关方向与条目推荐</h2>
+          </div>
+          <div class="related-tags">
+            <a href="/#featured">契约精灵设定</a>
+            <a href="/#featured">银铃的试炼 战斗分镜</a>
+            <a href="/#featured">雾隐花园 冬季篇</a>
+            <a href="/#featured">妖精工坊 冬之材料</a>
+            <a href="/#featured">妖精图书馆 夜班规则</a>
+            <a href="/#featured">森之短歌 单元剧</a>
+            <a href="/#rank">艾露莎 角色图鉴</a>
+            <a href="/#deepdive">短篇与长线连载比较</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充榜单 -->
+        <section class="section-block" id="rank" aria-labelledby="rankTitle">
+          <div class="section-head">
+            <h2 id="rankTitle">本周妖精角色人气榜</h2>
+          </div>
+          <div class="rank-list">
+            <div class="rank-item">
+              <span class="rank-num">1</span>
+              <div class="rank-body"><h3>艾露莎 · 林间契约</h3><p>Pixiv标签新增约1200件 · 第47话主线戏份</p></div>
+              <span class="rank-value">9.4</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">2</span>
+              <div class="rank-body"><h3>银铃 · 银铃的试炼</h3><p>Pixiv标签新增约860件 · 第二季第3话铃铛镜头</p></div>
+              <span class="rank-value">9.1</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">3</span>
+              <div class="rank-body"><h3>雾音 · 雾隐花园</h3><p>Pixiv标签新增约540件 · 第9话首次主动现身</p></div>
+              <span class="rank-value">8.7</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">4</span>
+              <div class="rank-body"><h3>扫落叶妖精 · 森之短歌第4集</h3><p>本周首次进榜 · 豆瓣第4集标记人数破万</p></div>
+              <span class="rank-value">8.3</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">5</span>
+              <div class="rank-body"><h3>吃书页的妖精 · 妖精图书馆第3卷</h3><p>第3卷新角色 · 首周销量约6800册</p></div>
+              <span class="rank-value">8.0</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">6</span>
+              <div class="rank-body"><h3>守灯妖精 · 森之短歌第6集</h3><p>第6集上线后讨论量上升 · 台词仅三句</p></div>
+              <span class="rank-value">7.8</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右栏辅助 -->
+      <aside class="aux-col" aria-label="辅助信息">
+        <div class="aux-panel">
+          <h2>本周热榜</h2>
+          <ul class="hot-list">
+            <li><span class="hot-num">1</span><a href="/#featured">林间契约 第47话</a></li>
+            <li><span class="hot-num">2</span><a href="/#featured">银铃的试炼 第二季</a></li>
+            <li><span class="hot-num">3</span><a href="/#featured">雾隐花园 第9话</a></li>
+            <li><span class="hot-num">4</span><a href="/#featured">妖精工坊 1.4.2</a></li>
+            <li><span class="hot-num">5</span><a href="/#featured">妖精图书馆 第3卷</a></li>
+          </ul>
+        </div>
+        <div class="aux-panel">
+          <h2>更新动态</h2>
+          <ul class="update-stream">
+            <li>林间契约 第47话<time datetime="2026-11-08">11-08 10:00</time></li>
+            <li>银铃的试炼 S2E3<time datetime="2026-11-07">11-07 20:00</time></li>
+            <li>妖精工坊 1.4.2<time datetime="2026-11-06">11-06 15:30</time></li>
+            <li>妖精图书馆 第3卷<time datetime="2026-11-05">11-05 09:00</time></li>
+            <li>角色人气榜<time datetime="2026-11-08">11-08 08:00</time></li>
+          </ul>
+        </div>
+        <div class="contribute-box">
+          <h2>妖精内容投稿</h2>
+          <p>有想补充的条目、设定考据或角色截图？投稿入口持续开放，本月已收到86条读者投稿。</p>
+          <button type="button" id="contributeBtn2">我要投稿</button>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-text">妖精192.com</span>
+          <p>收录2024年至2026年11月的妖精题材条目，覆盖漫画、动画、独立游戏、轻小说四类形态。每周三、周日更新榜单与速递，单话更新随原作同步。</p>
+        </div>
+        <div class="footer-col">
+          <h3>内容分类</h3>
+          <ul>
+            <li><a href="/#featured">漫画连载</a></li>
+            <li><a href="/#featured">动画剧集</a></li>
+            <li><a href="/#featured">独立游戏</a></li>
+            <li><a href="/#featured">轻小说</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>互动栏目</h3>
+          <ul>
+            <li><a href="/#comments">读者评论</a></li>
+            <li><a href="/#update">更新速递</a></li>
+            <li><a href="/#rank">角色人气榜</a></li>
+            <li><a href="/#faq">常见问答</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>关于内容</h3>
+          <ul>
+            <li><a href="/#overview">题材概览</a></li>
+            <li><a href="/#deepdive">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 妖精192.com · 内容条目为示例聚合，部分信息以原作公告为准</span>
+        <span>最近更新：2026-11-08 · 对应更新项：林间契约第47话、角色人气榜</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function(){
+      'use strict';
+
+      /* 移动端菜单 */
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mainNav = document.getElementById('mainNav');
+      var overlay = document.getElementById('navOverlay');
+
+      function closeMenu(){
+        if(!mainNav) return;
+        mainNav.classList.remove('open');
+        if(hamburger){
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded','false');
+        }
+        if(overlay) overlay.classList.remove('show');
+      }
+
+      function openMenu(){
+        if(!mainNav) return;
+        mainNav.classList.add('open');
+        if(hamburger){
+          hamburger.classList.add('open');
+          hamburger.setAttribute('aria-expanded','true');
+        }
+        if(overlay) overlay.classList.add('show');
+      }
+
+      if(hamburger){
+        hamburger.addEventListener('click', function(){
+          if(mainNav.classList.contains('open')){
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+      }
+
+      if(overlay){
+        overlay.addEventListener('click', closeMenu);
+      }
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') closeMenu();
+      });
+
+      /* 点击导航链接后收起菜单（移动端） */
+      if(mainNav){
+        mainNav.addEventListener('click', function(e){
+          var target = e.target;
+          if(target.tagName === 'A'){
+            closeMenu();
+          }
+        });
+      }
+
+      /* 回到顶部 */
+      var backTop = document.getElementById('backTop');
+      function toggleBackTop(){
+        if(!backTop) return;
+        if(window.scrollY > window.innerHeight){
+          backTop.classList.add('show');
+        } else {
+          backTop.classList.remove('show');
+        }
+      }
+      window.addEventListener('scroll', toggleBackTop, {passive:true});
+      toggleBackTop();
+
+      if(backTop){
+        backTop.addEventListener('click', function(){
+          window.scrollTo({top:0, behavior:'smooth'});
+        });
+      }
+
+      /* 本地搜索：按标题与正文匹配 */
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+      var noResult = null;
+
+      function ensureNoResult(){
+        if(noResult) return noResult;
+        noResult = document.createElement('div');
+        noResult.className = 'no-result';
+        noResult.textContent = '没有找到匹配的条目，换个关键词试试。';
+        var main = document.querySelector('.main-col');
+        if(main) main.insertBefore(noResult, main.firstChild);
+        return noResult;
+      }
+
+      function doSearch(){
+        if(!searchInput) return;
+        var q = searchInput.value.trim().toLowerCase();
+        var main = document.querySelector('.main-col');
+        if(!main) return;
+
+        var sections = main.querySelectorAll('.section-block');
+        var anyVisible = false;
+
+        if(!q){
+          sections.forEach(function(s){ s.style.display = ''; });
+          var nr = ensureNoResult();
+          nr.style.display = 'none';
+          return;
+        }
+
+        sections.forEach(function(section){
+          var text = section.textContent.toLowerCase();
+          if(text.indexOf(q) !== -1){
+            section.style.display = '';
+            anyVisible = true;
+          } else {
+            section.style.display = 'none';
+          }
+        });
+
+        var nr = ensureNoResult();
+        if(anyVisible){
+          nr.style.display = 'none';
+        } else {
+          nr.style.display = 'block';
+        }
+      }
+
+      if(searchBtn){
+        searchBtn.addEventListener('click', doSearch);
+      }
+      if(searchInput){
+        searchInput.addEventListener('keydown', function(e){
+          if(e.key === 'Enter'){
+            e.preventDefault();
+            doSearch();
+          }
+        });
+      }
+
+      /* 投稿按钮：定位到评论区并提示 */
+      function goContribute(){
+        var target = document.getElementById('comments');
+        if(target){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      }
+      var cb1 = document.getElementById('contributeBtn');
+      var cb2 = document.getElementById('contributeBtn2');
+      if(cb1) cb1.addEventListener('click', goContribute);
+      if(cb2) cb2.addEventListener('click', goContribute);
+
+      /* 频道索引高亮当前板块 */
+      var channelLinks = document.querySelectorAll('.channel-list a');
+      var sectionEls = document.querySelectorAll('.main-col .section-block');
+      if('IntersectionObserver' in window && sectionEls.length && channelLinks.length){
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              var id = entry.target.id;
+              channelLinks.forEach(function(a){
+                a.style.background = '';
+                a.style.color = '';
+                if(a.getAttribute('href') === '/#' + id){
+                  a.style.background = 'var(--fairy-panel)';
+                  a.style.color = 'var(--fairy-primary-dark)';
+                }
+              });
+            }
+          });
+        }, {rootMargin:'-140px 0px -60% 0px', threshold:0});
+        sectionEls.forEach(function(s){ obs.observe(s); });
+      }
+
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "name":"妖精192.com",
+        "description":"妖精题材内容聚合与条目速查，收录漫画、动画、独立游戏与轻小说条目。",
+        "inLanguage":"zh-CN"
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"《林间契约》第47话的试炼规则是什么？",
+            "acceptedAnswer":{"@type":"Answer","text":"银铃需在三天内找到古树之心，每晚只能使用一次根须感知。失败则艾露莎与主角的契约解除，已付出的感官记忆不退还。第47话结尾主角还剩两次感知机会。"}
+          },
+          {
+            "@type":"Question",
+            "name":"《银铃的试炼》第二季和第一季在设定上有什么不同？",
+            "acceptedAnswer":{"@type":"Answer","text":"第二季新增音域消耗机制：每次使用大范围铃铛能力，铃铛出现裂纹，累计第6道时能力暂时失效。第一季无此限制。第3话结束时已有4道裂纹。"}
+          },
+          {
+            "@type":"Question",
+            "name":"《妖精工坊：炼金与契约》后期材料重复吗？",
+            "acceptedAnswer":{"@type":"Answer","text":"1.4.2补丁前中期第3至5章约14种材料需反复采集，差评集中于此。11月6日补丁新增12种冬之材料配方并调整第4章掉落表，重复频次下降，但第5章问题仍有提及。"}
+          },
+          {
+            "@type":"Question",
+            "name":"《森之短歌》每一集是独立故事吗？",
+            "acceptedAnswer":{"@type":"Answer","text":"是。每集12分钟，角色、场景、时代不共享，唯一共同点是妖精身份。第4集与第6集无剧情关联，可随机观看。"}
+          },
+          {
+            "@type":"Question",
+            "name":"艾露莎为什么能连续三周排角色榜第一？",
+            "acceptedAnswer":{"@type":"Answer","text":"统计周期10月26日至11月8日，艾露莎有第46、47两话主线戏份，第47话犹豫表情被截取传播。Pixiv投稿量新增约1200件，为第二名的1.4倍。"}
+          },
+          {
+            "@type":"Question",
+            "name":"轻小说《妖精图书馆的夜班管理员》适合从第几卷开始看？",
+            "acceptedAnswer":{"@type":"Answer","text":"从第1卷开始。第2卷夜班规则修订建立在第1卷旧规则上，跳读会看不懂第3卷吃书页妖精如何钻规则空子。第1卷约210页。"}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</body>
+          </html>
