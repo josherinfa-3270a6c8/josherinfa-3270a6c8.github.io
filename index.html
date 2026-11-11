@@ -1,0 +1,1386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>相泽南 五区播放 - 作品分区与观看指南</title>
+  <meta name="description" content="相泽南 五区播放内容聚合，整理各分区作品条目、播放入口、更新动态与观看顺序。覆盖番号分类、精选推荐、用户评论与常见问题，适合影迷按分区查找内容。" >
+  <meta name="keywords" content="相泽南 五区播放">
+  <style>
+    :root {
+      --color-primary: #2c4a7a;
+      --color-primary-light: #e5ecf5;
+      --color-primary-dark: #1b2f4f;
+      --color-bg: #f7f8fa;
+      --color-surface: #ffffff;
+      --color-text: #1e2b3c;
+      --color-text-secondary: #5a6b7e;
+      --color-text-tertiary: #8a9aa8;
+      --color-border: #e2e6ed;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 6px;
+      --radius-banner: 16px;
+      --shadow-default: 0 2px 12px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,0.08);
+      --font-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      --max-width: 1360px;
+      --sticky-height: 92px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-height); }
+    body {
+      font-family: var(--font-base);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .sticky-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+    }
+    /* 公告条 */
+    .announce-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 24px;
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .announce-bar .brand-mini {
+      font-weight: 700;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .announce-bar .item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .announce-bar .dot {
+      width: 4px; height: 4px; border-radius: 50%; background: var(--color-primary);
+      display: inline-block;
+    }
+    .announce-bar .date {
+      color: var(--color-text-tertiary);
+      font-size: 12px;
+    }
+    /* 页头 */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      gap: 24px;
+    }
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo-svg { width: 36px; height: 36px; }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--color-primary-dark);
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+    .main-nav a:hover { color: var(--color-primary); }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--color-bg);
+      border-radius: var(--radius-btn);
+      padding: 6px 12px;
+      border: 1px solid var(--color-border);
+      gap: 6px;
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      width: 140px;
+      color: var(--color-text);
+    }
+    .search-box input::placeholder { color: var(--color-text-tertiary); }
+    .search-box svg { width: 16px; height: 16px; fill: var(--color-text-tertiary); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px; background: var(--color-text);
+      border-radius: 2px; transition: 0.2s;
+    }
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #1b2f4f 0%, #2c4a7a 60%, #3d5f8f 100%);
+      border-radius: var(--radius-banner);
+      margin: 24px 0 32px;
+      padding: 48px 48px 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .hero .subtitle {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 24px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #fff;
+      color: var(--color-primary-dark);
+      padding: 10px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 15px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 500;
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    /* 三栏布局 */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 280px;
+      gap: 32px;
+      margin-bottom: 48px;
+      align-items: start;
+    }
+    /* 左频道栏 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-height) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .channel-sidebar .ch-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 8px 0;
+    }
+    .channel-sidebar a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      transition: background 0.15s, color 0.15s;
+    }
+    .channel-sidebar a:hover { background: var(--color-primary-light); color: var(--color-primary); }
+    .channel-sidebar a.active { background: var(--color-primary-light); color: var(--color-primary); font-weight: 600; }
+    /* 主内容区 */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      min-width: 0;
+    }
+    .section {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-default);
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-bottom: 20px;
+    }
+    /* 概览 */
+    .overview-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+    }
+    .overview-text p + p { margin-top: 12px; }
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      background: var(--color-surface);
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--color-bg);
+    }
+    .card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--color-text);
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      padding-top: 8px;
+      border-top: 1px solid var(--color-border);
+    }
+    /* 列表 */
+    .list-compact {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .list-item:last-child { border-bottom: none; }
+    .list-item .item-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-primary);
+      min-width: 24px;
+    }
+    .list-item .item-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+    }
+    .list-item .item-text strong { color: var(--color-text); font-weight: 600; }
+    .list-item .item-date {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .cat-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 8px;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-primary-dark);
+      transition: background 0.15s, box-shadow 0.15s;
+      text-align: center;
+    }
+    .cat-item:hover { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-hover); }
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 24px 0 8px;
+      color: var(--color-text);
+    }
+    .deep-dive h3:first-child { margin-top: 0; }
+    .deep-dive p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      margin-bottom: 10px;
+    }
+    .deep-dive ul {
+      margin: 8px 0 12px 20px;
+      list-style: disc;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+    .deep-dive ul li { margin-bottom: 6px; }
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    details {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-btn);
+      padding: 12px 16px;
+      background: var(--color-surface);
+    }
+    details[open] { border-color: var(--color-primary); }
+    summary {
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--color-text);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--color-text-tertiary);
+      transition: transform 0.2s;
+    }
+    details[open] summary::after { content: '−'; }
+    .faq-answer {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .comment-card {
+      background: var(--color-bg);
+      border-radius: var(--radius-btn);
+      padding: 14px 16px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      border: 1px solid var(--color-border);
+    }
+    .comment-card .nickname {
+      font-weight: 600;
+      color: var(--color-primary);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .news-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .news-img {
+      width: 100px;
+      height: 68px;
+      border-radius: var(--radius-btn);
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--color-bg);
+    }
+    .news-content { flex: 1; min-width: 0; }
+    .news-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+    .news-date {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      margin-bottom: 4px;
+    }
+    .news-summary {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    /* 相关推荐 */
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .rec-tag {
+      padding: 6px 14px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .rec-tag:hover { background: var(--color-primary-light); border-color: var(--color-primary); color: var(--color-primary); }
+    /* 补充板块 - 榜单 */
+    .rank-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      counter-reset: rank;
+    }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--color-bg);
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      counter-increment: rank;
+    }
+    .rank-item::before {
+      content: counter(rank);
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 16px;
+      min-width: 24px;
+    }
+    .rank-item .rank-name { font-weight: 600; color: var(--color-text); flex: 1; }
+    .rank-item .rank-score { color: var(--color-text-tertiary); font-size: 12px; }
+    /* 投稿互动 */
+    .interact-box {
+      background: var(--color-primary-light);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .interact-box p { font-size: 14px; color: var(--color-primary-dark); font-weight: 500; }
+    .interact-btn {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 8px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    /* 右侧辅助栏 */
+    .right-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: calc(var(--sticky-height) + 16px);
+    }
+    .side-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+    .side-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    .side-card .hot-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 13px;
+      color: var(--color-text-secondary);
+    }
+    .side-card .hot-item:last-child { border-bottom: none; }
+    .side-card .hot-num {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 14px;
+      min-width: 20px;
+    }
+    .side-card .hot-title { flex: 1; }
+    .side-card .hot-heat { color: var(--color-text-tertiary); font-size: 12px; }
+    .update-item {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item .u-date { color: var(--color-text-tertiary); font-size: 12px; flex-shrink: 0; }
+    /* 页尾 */
+    .site-footer {
+      background: var(--color-primary-dark);
+      color: rgba(255,255,255,0.8);
+      margin-top: 48px;
+      padding: 40px 0 24px;
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .footer-desc { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.65); }
+    .footer-col h5 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 80px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 99;
+      font-size: 20px;
+    }
+    .back-top.show { opacity: 1; visibility: visible; }
+    /* 搜索无结果 */
+    .no-result {
+      padding: 24px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--color-text-tertiary);
+      display: none;
+    }
+    .no-result.show { display: block; }
+    /* 移动端 */
+    @media (max-width: 1024px) {
+      .main-layout { grid-template-columns: 1fr 260px; }
+      .channel-sidebar { display: none; }
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .announce-bar { font-size: 12px; gap: 10px; }
+    }
+    @media (max-width: 740px) {
+      .container { padding: 0 16px; }
+      .main-layout { grid-template-columns: 1fr; }
+      .right-sidebar { position: static; }
+      .hero { padding: 32px 24px; }
+      .hero h1 { font-size: 28px; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .site-header { flex-wrap: wrap; }
+      .search-box input { width: 100px; }
+      .card-grid { grid-template-columns: 1fr 1fr; }
+      .comment-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .news-item { flex-direction: column; }
+      .news-img { width: 100%; height: 140px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+    /* 移动端菜单 */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 200;
+      background: rgba(0,0,0,0.4);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-inner {
+      position: absolute;
+      top: 0; left: 0;
+      width: 280px;
+      height: 100%;
+      background: #fff;
+      padding: 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-menu-inner a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      color: var(--color-text-secondary);
+    }
+    .mobile-menu-inner a:hover { background: var(--color-primary-light); }
+    .mobile-close {
+      align-self: flex-end;
+      font-size: 24px;
+      padding: 4px 8px;
+      color: var(--color-text-secondary);
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 + 页头 -->
+<div class="sticky-wrapper">
+  <div class="announce-bar">
+    <span class="brand-mini">相泽南 五区播放</span>
+    <span class="dot"></span>
+    <span class="item"><span class="date">11月7日</span>更新「五区·剧情精选」第14辑</span>
+    <span class="dot"></span>
+    <span class="item"><span class="date">11月6日</span>「VR专区」新增3条目</span>
+    <span class="dot"></span>
+    <span class="item">本周播放榜 · 12条目</span>
+  </div>
+  <header class="site-header">
+    <div class="brand-area">
+      <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="32" height="32" rx="8" fill="#2c4a7a"/>
+        <path d="M12 11 L26 18 L12 25 Z" fill="#fff" opacity="0.9"/>
+        <circle cx="26" cy="26" r="5" fill="#e5ecf5" opacity="0.4"/>
+      </svg>
+      <span class="brand-name">相泽南 五区播放</span>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="/#overview">分区概览</a>
+      <a href="/#featured">精选条目</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#categories">分类导航</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#faq">常见问题</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="search" id="searchInput" placeholder="搜索条目 / 标签" aria-label="搜索内容">
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+</div>
+
+<!-- 移动端菜单 -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <button class="mobile-close" id="mobileClose" aria-label="关闭菜单">×</button>
+    <a href="/#overview">分区概览</a>
+    <a href="/#featured">精选条目</a>
+    <a href="/#updates">更新动态</a>
+    <a href="/#categories">分类导航</a>
+    <a href="/#deep-dive">深度解析</a>
+    <a href="/#guide">观看指南</a>
+    <a href="/#faq">常见问题</a>
+    <a href="/#comments">用户评论</a>
+    <a href="/#news">相关资讯</a>
+    <a href="/#recommend">相关推荐</a>
+    <a href="/#rank">热门榜单</a>
+    <a href="/#contribute">投稿互动</a>
+  </div>
+</div>
+
+<div class="container">
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>相泽南 五区播放</h1>
+      <p class="subtitle">汇聚相泽南在五区各分类下的作品条目、播放入口与更新动态。按剧情、VR、合集、番外、限定五种分区整理，附观看顺序建议与条目对比。</p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">浏览精选条目</a>
+        <a href="/#categories" class="btn-outline">查看五区分类</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏布局 -->
+  <div class="main-layout">
+
+    <!-- 左频道索引 -->
+    <aside class="channel-sidebar" aria-label="频道索引">
+      <div class="ch-title">频道索引</div>
+      <a href="/#overview" class="active">分区概览</a>
+      <a href="/#featured">精选条目</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#categories">分类导航</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#rank">热门榜单</a>
+      <a href="/#contribute">投稿互动</a>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+
+      <!-- 1. 主题领域概览 -->
+      <section class="section" id="overview">
+        <h2 class="section-title">五区内容生态概览</h2>
+        <div class="overview-text">
+          <p>相泽南在五区播放体系里，内容通常按题材与形式拆成五个方向：剧情向、VR沉浸、合集精选、番外短篇、限定企划。每个区对应不同的制作周期和观看场景，剧情区偏重叙事完整度，单条目时长多在90至120分钟；VR区以第一人称视角为主，设备适配和帧率稳定是核心指标；合集区把散落条目按主题重新打包，适合补看遗漏；番外区多为15至30分钟的短篇，用于衔接主线空隙；限定区则带有时间窗口，上线后通常保留60至90天。</p>
+          <p>从近期条目分布看，剧情区占总量约四成，合集区紧随其后。2026年10月下旬至11月初，五区共更新12个条目，其中「深夜书房」系列第3辑、「VR·天台视角」和「番外·咖啡店」出现在多个讨论区。条目时长、分区归属和上线日期是判断内容类型的第一层信息，第二层则要看制作方、共演名单和版本差异。部分条目存在通常版与导演剪辑版的时长差，差值在8至15分钟之间，选择时需留意版本标注。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section" id="featured">
+        <h2 class="section-title">五区精选条目推荐</h2>
+        <p class="section-sub">按分区筛选近期条目，附类型标签与看点摘要</p>
+        <div class="card-grid" id="featuredGrid">
+          <article class="card" data-search="深夜书房 剧情 相泽南">
+            <img class="card-img" src="https://picsum.photos/seed/shenye-shufang-01/400/300" alt="深夜书房系列剧照" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">深夜书房·第3辑</h3>
+              <div class="card-tags"><span class="tag">剧情</span><span class="tag">系列续作</span><span class="tag">95分钟</span></div>
+              <p class="card-desc">相泽南饰演旧书店店主，与常客展开三段对话。第三辑新增夜间外景，叙事节奏比前两辑慢，适合按顺序看。</p>
+              <div class="card-meta"><span>热度 8.7k</span><span>11月5日</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="VR 天台 沉浸">
+            <img class="card-img" src="https://picsum.photos/seed/vr-tiantai-02/400/300" alt="VR天台视角场景" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">VR·天台视角</h3>
+              <div class="card-tags"><span class="tag">VR</span><span class="tag">第一人称</span><span class="tag">40分钟</span></div>
+              <p class="card-desc">全程8K拍摄，视角跟随相泽南在天台移动。设备要求较高，普通手机屏体验一般，建议头显观看。</p>
+              <div class="card-meta"><span>热度 7.2k</span><span>11月3日</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="合集 精选 2026">
+            <img class="card-img" src="https://picsum.photos/seed/heji-jingxuan-03/400/300" alt="2026秋季合集封面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">2026秋季合集·精选12篇</h3>
+              <div class="card-tags"><span class="tag">合集</span><span class="tag">精选</span><span class="tag">总240分钟</span></div>
+              <p class="card-desc">从7月至9月条目中挑出12篇，按主题分成“日常”“旅途”“对话”三组，附分篇索引。</p>
+              <div class="card-meta"><span>热度 6.8k</span><span>10月28日</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="番外 咖啡店 短篇">
+            <img class="card-img" src="https://picsum.photos/seed/fanwai-kafei-04/400/300" alt="番外咖啡店场景" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">番外·咖啡店</h3>
+              <div class="card-tags"><span class="tag">番外</span><span class="tag">短篇</span><span class="tag">22分钟</span></div>
+              <p class="card-desc">主线之外的独立短篇，相泽南与咖啡师的三段即兴对话。拍摄花絮附在片尾，共5分钟。</p>
+              <div class="card-meta"><span>热度 5.4k</span><span>11月1日</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="限定 秋夜 企划">
+            <img class="card-img" src="https://picsum.photos/seed/xianding-qiuye-05/400/300" alt="限定秋夜企划海报" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">限定·秋夜散步</h3>
+              <div class="card-tags"><span class="tag">限定</span><span class="tag">外景</span><span class="tag">55分钟</span></div>
+              <p class="card-desc">10月15日上线，保留至12月14日。全程夜间外景跟拍，路线从河岸到商店街，含未剪辑片段。</p>
+              <div class="card-meta"><span>热度 6.1k</span><span>10月15日</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="剧情 雨声 独白">
+            <img class="card-img" src="https://picsum.photos/seed/yusheng-dubai-06/400/300" alt="雨声独白剧照" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">雨声与独白</h3>
+              <div class="card-tags"><span class="tag">剧情</span><span class="tag">独白</span><span class="tag">78分钟</span></div>
+              <p class="card-desc">全片以雨天室内为背景，相泽南以独白推进叙事，台词密度高于同期条目，适合安静时段看。</p>
+              <div class="card-meta"><span>热度 7.5k</span><span>10月30日</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="no-result" id="noResult">没有找到匹配的条目，试试更短的关键词。</div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section class="section" id="updates">
+        <h2 class="section-title">五区更新动态</h2>
+        <div class="list-compact">
+          <div class="list-item">
+            <span class="item-num">01</span>
+            <span class="item-text"><strong>「深夜书房·第3辑」</strong>上线剧情区，时长95分钟，导演剪辑版同步放出</span>
+            <span class="item-date">11月5日</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">02</span>
+            <span class="item-text"><strong>「VR·天台视角」</strong>VR区新增，8K分辨率，需头显设备</span>
+            <span class="item-date">11月3日</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">03</span>
+            <span class="item-text"><strong>「番外·咖啡店」</strong>番外区上线，附5分钟拍摄花絮</span>
+            <span class="item-date">11月1日</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">04</span>
+            <span class="item-text"><strong>「2026秋季合集·精选12篇」</strong>合集区更新，分三组索引</span>
+            <span class="item-date">10月28日</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">05</span>
+            <span class="item-text"><strong>「限定·秋夜散步」</strong>限定区剩余天数更新，保留至12月14日</span>
+            <span class="item-date">10月15日</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">06</span>
+            <span class="item-text"><strong>「雨声与独白」</strong>剧情区条目，台词密度标注更新</span>
+            <span class="item-date">10月30日</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">07</span>
+            <span class="item-text"><strong>「午后阳台」</strong>剧情区新增，42分钟中篇</span>
+            <span class="item-date">10月25日</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">08</span>
+            <span class="item-text"><strong>「VR·车内对话」</strong>VR区条目帧率优化，版本更新</span>
+            <span class="item-date">10月20日</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section" id="categories">
+        <h2 class="section-title">按类型查找条目</h2>
+        <div class="cat-grid">
+          <a href="/#featured" class="cat-item">剧情长片</a>
+          <a href="/#featured" class="cat-item">VR沉浸</a>
+          <a href="/#featured" class="cat-item">合集精选</a>
+          <a href="/#featured" class="cat-item">番外短篇</a>
+          <a href="/#featured" class="cat-item">限定企划</a>
+          <a href="/#featured" class="cat-item">导演剪辑版</a>
+          <a href="/#featured" class="cat-item">幕后花絮</a>
+          <a href="/#featured" class="cat-item">系列续作</a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section class="section deep-dive" id="deep-dive">
+        <h2 class="section-title">五区条目的版本差异与选择逻辑</h2>
+        <h3>剧情区与合集区的时长差说明了什么</h3>
+        <p>同一部作品在剧情区和合集区出现时，时长标注常相差8到15分钟。以「深夜书房」系列为例，剧情区第3辑标注95分钟，而合集版收录的版本为82分钟，差值来自片头回顾和一段7分钟的幕后访谈。制作方在2026年10月28日的更新日志里写得很清楚：合集版优先保证单条目的完整性，不携带系列连贯片段。这意味着想看完整叙事的观众应选剧情区原版，而补看遗漏或按主题浏览的观众，合集版的信息密度更高。</p>
+        <h3>VR区的设备门槛与版本标注</h3>
+        <p>VR区的条目在播放页会标注设备等级，目前分三档：头显专用、手机适配、平板兼容。「VR·天台视角」属于头显专用，8K分辨率下帧率稳定在60fps，但用手机屏打开会自动降为1080p并裁切两侧视野。10月20日「VR·车内对话」的帧率优化更新，把原来的45fps提升到60fps，同时新增了普通版本供非头显用户切换。版本选择的关键不在分辨率数字，而在设备是否支持头部追踪——不支持的话，第一人称视角的沉浸感会大打折扣。</p>
+        <h3>限定区的时间窗口与条目生命周期</h3>
+        <p>限定区的条目带有明确的下线日期，「限定·秋夜散步」标注保留至12月14日，从10月15日上线算起共61天。对比2026年夏季限定企划的45天窗口，这次延长了16天。延长背后是条目类型的变化：秋夜散步的外景跟拍成本更高，单条目制作周期约3周，延长窗口有助于摊薄制作投入。对观看者来说，限定区的条目在窗口结束后通常不再单独提供，只能通过合集或后续企划间接获取，因此时间敏感度高于其他四区。</p>
+        <h3>番外短篇的定位与观看顺序</h3>
+        <p>番外区的条目时长集中在15至30分钟，叙事独立于主线，但部分条目会引用主线设定。以「番外·咖啡店」为例，22分钟里出现了主线「雨声与独白」中的同一个咖啡杯道具，但剧情没有直接关联。制作方在花絮里说明，番外的拍摄顺序通常在主线条目之后，用于测试新的场景和对话方式。观看顺序上，先看主线再补番外，能辨认出道具和场景的呼应；反过来看也不会造成理解障碍，只是少一层细节。</p>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="section" id="guide">
+        <h2 class="section-title">五区观看顺序与判断依据</h2>
+        <div class="list-compact">
+          <div class="list-item">
+            <span class="item-num">①</span>
+            <span class="item-text"><strong>先定设备，再选分区。</strong>没有头显就从剧情区和合集区入手，VR区留到设备到位再看，避免因降级版本影响第一印象。</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">②</span>
+            <span class="item-text"><strong>按系列顺序看剧情区。</strong>「深夜书房」这类系列续作，第3辑的对话密度依赖前两辑的铺垫，跳看会丢失部分语境。</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">③</span>
+            <span class="item-text"><strong>合集区用索引跳看。</strong>12篇合集附有分篇索引，按“日常”“旅途”“对话”三组直接定位，不必从头到尾顺播。</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">④</span>
+            <span class="item-text"><strong>限定区优先处理。</strong>窗口期在60天左右的条目，拖到最后容易只剩低画质版本，先看时限明确的。</span>
+          </div>
+          <div class="list-item">
+            <span class="item-num">⑤</span>
+            <span class="item-text"><strong>番外当调剂。</strong>22到30分钟的短篇适合碎片时间，主线看累了插一段番外，不影响连续性。</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section" id="faq">
+        <h2 class="section-title">常见问题</h2>
+        <div class="faq-list">
+          <details>
+            <summary>五区里的VR条目需要什么设备才能看？</summary>
+            <div class="faq-answer">看播放页标注的设备等级。头显专用条目需要支持头部追踪的VR头显，手机适配条目可以用普通手机屏观看但会降分辨率。不支持的设备打开后会自动切到普通版本。</div>
+          </details>
+          <details>
+            <summary>「深夜书房」第3辑和合集版有什么差别？</summary>
+            <div class="faq-answer">剧情区第3辑为95分钟，含片头回顾和完整叙事；合集版82分钟，去掉了系列回顾片段，保留单条目主体。两个版本在主线情节上一致，差在连续性和幕后内容。</div>
+          </details>
+          <details>
+            <summary>限定区的条目下线后还能看到吗？</summary>
+            <div class="faq-answer">窗口结束后通常不再单独提供，部分条目会进入后续合集或年度企划。以「限定·秋夜散步」为例，保留至12月14日，之后是否重新上架取决于制作方安排，目前没有明确公告。</div>
+          </details>
+          <details>
+            <summary>番外条目不看主线能直接看吗？</summary>
+            <div class="faq-answer">可以。番外短篇叙事独立，22到30分钟内自成一题。只是部分道具和场景与主线呼应，先看主线能多认出一层细节，不影响理解。</div>
+          </details>
+          <details>
+            <summary>剧情区的导演剪辑版和通常版差多少时长？</summary>
+            <div class="faq-answer">目前条目里差值在8到15分钟之间，主要来自额外对话和幕后片段。剪辑版标注在标题末尾，播放页会同时列出两个版本的时长，选之前对比一下。</div>
+          </details>
+          <details>
+            <summary>五区条目按什么节奏更新？</summary>
+            <div class="faq-answer">剧情区大约每两周一条，VR区每月一到两条，合集区按季度打包，番外区跟随主线节奏，限定区不定期。2026年10月下旬到11月初，五区合计更新12个条目。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section" id="comments">
+        <h2 class="section-title">用户评论</h2>
+        <div class="comment-grid">
+          <div class="comment-card"><div class="nickname">雨停之前</div>深夜书房第3辑的夜间外景拍得比前两辑用心，书店里那盏台灯的光比台词更说明问题。</div>
+          <div class="comment-card"><div class="nickname">蓝色马克杯</div>VR天台视角用手机看的，画面被裁掉两边，沉浸感基本没有。还是得头显。</div>
+          <div class="comment-card"><div class="nickname">四谷站前</div>合集版把深夜书房剪到82分钟，少了那段7分钟访谈，有点可惜。</div>
+          <div class="comment-card"><div class="nickname">午后三点</div>限定秋夜散步的路线选得好，河岸那段一镜到底，61天窗口不算短。</div>
+          <div class="comment-card"><div class="nickname">纸飞机_</div>番外咖啡店22分钟，花絮5分钟，比正片还有意思。</div>
+          <div class="comment-card"><div class="nickname">K不加班</div>雨声与独白台词太多了，安静看还行，想放松的时候不适合。</div>
+          <div class="comment-card"><div class="nickname">海边的卡夫卡</div>VR车内对话帧率优化之后顺滑不少，之前45fps有点晃。</div>
+          <div class="comment-card"><div class="nickname">路人甲_2026</div>秋夜散步到现在都没看，还剩一个多月，得抓紧了。</div>
+          <div class="comment-card"><div class="nickname">半糖去冰</div>导演剪辑版多出来的部分有时候反而拖节奏，看个人口味。</div>
+          <div class="comment-card"><div class="nickname">晚风信箱</div>午后阳台42分钟中篇，长度刚好，晚饭后一口气看完。</div>
+          <div class="comment-card"><div class="nickname">东京下雨</div>五区分类挺清楚的，就是限定区总怕忘记时间。</div>
+          <div class="comment-card"><div class="nickname">一颗柠檬</div>深夜书房还是第1辑最好看，第3辑有点为了续而续。</div>
+          <div class="comment-card"><div class="nickname">木更津</div>VR区设备门槛确实高，普通用户能选的还是剧情和合集。</div>
+          <div class="comment-card"><div class="nickname">咖啡不加糖</div>番外短篇适合通勤看，30分钟以内正好。</div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section" id="news">
+        <h2 class="section-title">相关资讯</h2>
+        <div class="news-list">
+          <div class="news-item">
+            <img class="news-img" src="https://picsum.photos/seed/news-shufang-11/600/400" alt="深夜书房第3辑上线报道配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">「深夜书房·第3辑」11月5日上线，新增夜间外景</div>
+              <div class="news-date">2026年11月5日</div>
+              <div class="news-summary">制作方同步放出导演剪辑版，比通常版多12分钟，包含一段未使用的天台对话。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img class="news-img" src="https://picsum.photos/seed/news-vr-12/600/400" alt="VR天台视角设备要求报道配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">VR区新增「天台视角」，8K分辨率标注头显专用</div>
+              <div class="news-date">2026年11月3日</div>
+              <div class="news-summary">播放页设备等级首次细分三档，手机端打开自动降为1080p并裁切两侧视野。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img class="news-img" src="https://picsum.photos/seed/news-heji-13/600/400" alt="秋季合集精选报道配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">2026秋季合集推出精选12篇，按主题分三组索引</div>
+              <div class="news-date">2026年10月28日</div>
+              <div class="news-summary">12篇来自7月至9月条目，总时长240分钟，合集版单条时长比原版平均少9分钟。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img class="news-img" src="https://picsum.photos/seed/news-qiuye-14/600/400" alt="限定秋夜散步时间窗口报道配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">限定企划「秋夜散步」保留至12月14日，窗口61天</div>
+              <div class="news-date">2026年10月15日</div>
+              <div class="news-summary">比夏季限定企划延长16天，制作周期约3周，外景跟拍成本高于室内条目。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img class="news-img" src="https://picsum.photos/seed/news-vrche-15/600/400" alt="VR车内对话帧率优化报道配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">「VR·车内对话」帧率从45fps提升到60fps</div>
+              <div class="news-date">2026年10月20日</div>
+              <div class="news-summary">版本更新同时新增普通版本，非头显用户可切换观看，不再强制裁切画面。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img class="news-img" src="https://picsum.photos/seed/news-yusheng-16/600/400" alt="雨声与独白台词密度报道配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">「雨声与独白」台词密度居同期条目首位</div>
+              <div class="news-date">2026年10月30日</div>
+              <div class="news-summary">78分钟全片以独白推进，制作方在条目页新增台词密度标注，方便按偏好筛选。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section" id="recommend">
+        <h2 class="section-title">相关推荐</h2>
+        <div class="rec-tags">
+          <a href="/#featured" class="rec-tag">深夜书房系列</a>
+          <a href="/#featured" class="rec-tag">VR天台视角</a>
+          <a href="/#featured" class="rec-tag">2026秋季合集</a>
+          <a href="/#featured" class="rec-tag">番外咖啡店</a>
+          <a href="/#featured" class="rec-tag">限定秋夜散步</a>
+          <a href="/#featured" class="rec-tag">雨声与独白</a>
+          <a href="/#featured" class="rec-tag">午后阳台</a>
+          <a href="/#featured" class="rec-tag">导演剪辑版对比</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块 - 热门榜单 -->
+      <section class="section" id="rank">
+        <h2 class="section-title">本周播放热度榜</h2>
+        <p class="section-sub">基于站内近7天播放与收藏数据，统计截至11月7日</p>
+        <div class="rank-list">
+          <div class="rank-item"><span class="rank-name">深夜书房·第3辑</span><span class="rank-score">热度 8.7k</span></div>
+          <div class="rank-item"><span class="rank-name">雨声与独白</span><span class="rank-score">热度 7.5k</span></div>
+          <div class="rank-item"><span class="rank-name">VR·天台视角</span><span class="rank-score">热度 7.2k</span></div>
+          <div class="rank-item"><span class="rank-name">2026秋季合集·精选12篇</span><span class="rank-score">热度 6.8k</span></div>
+          <div class="rank-item"><span class="rank-name">限定·秋夜散步</span><span class="rank-score">热度 6.1k</span></div>
+          <div class="rank-item"><span class="rank-name">番外·咖啡店</span><span class="rank-score">热度 5.4k</span></div>
+        </div>
+      </section>
+
+      <!-- 12. 投稿互动 -->
+      <section class="section" id="contribute">
+        <h2 class="section-title">投稿与交流</h2>
+        <div class="interact-box">
+          <p>有想推荐的条目或想补充的版本信息？欢迎提交条目线索。</p>
+          <a href="/#contribute" class="interact-btn">提交条目线索</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="right-sidebar">
+      <div class="side-card">
+        <h4>热播条目</h4>
+        <div class="hot-item"><span class="hot-num">1</span><span class="hot-title">深夜书房·第3辑</span><span class="hot-heat">8.7k</span></div>
+        <div class="hot-item"><span class="hot-num">2</span><span class="hot-title">雨声与独白</span><span class="hot-heat">7.5k</span></div>
+        <div class="hot-item"><span class="hot-num">3</span><span class="hot-title">VR·天台视角</span><span class="hot-heat">7.2k</span></div>
+        <div class="hot-item"><span class="hot-num">4</span><span class="hot-title">秋季合集精选</span><span class="hot-heat">6.8k</span></div>
+        <div class="hot-item"><span class="hot-num">5</span><span class="hot-title">限定·秋夜散步</span><span class="hot-heat">6.1k</span></div>
+      </div>
+      <div class="side-card">
+        <h4>最近更新</h4>
+        <div class="update-item"><span>深夜书房·第3辑</span><span class="u-date">11月5日</span></div>
+        <div class="update-item"><span>VR·天台视角</span><span class="u-date">11月3日</span></div>
+        <div class="update-item"><span>番外·咖啡店</span><span class="u-date">11月1日</span></div>
+        <div class="update-item"><span>秋季合集精选</span><span class="u-date">10月28日</span></div>
+        <div class="update-item"><span>雨声与独白</span><span class="u-date">10月30日</span></div>
+        <div class="update-item"><span>午后阳台</span><span class="u-date">10月25日</span></div>
+      </div>
+      <div class="side-card">
+        <h4>分类速览</h4>
+        <div class="hot-item"><span class="hot-title">剧情长片</span><span class="hot-heat">42%</span></div>
+        <div class="hot-item"><span class="hot-title">合集精选</span><span class="hot-heat">23%</span></div>
+        <div class="hot-item"><span class="hot-title">VR沉浸</span><span class="hot-heat">16%</span></div>
+        <div class="hot-item"><span class="hot-title">番外短篇</span><span class="hot-heat">12%</span></div>
+        <div class="hot-item"><span class="hot-title">限定企划</span><span class="hot-heat">7%</span></div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">相泽南 五区播放</div>
+        <p class="footer-desc">覆盖2026年7月至11月的条目更新，类型以剧情长片和合集精选为主，更新节奏为剧情区每两周一条、VR区每月一到两条、合集按季打包、限定区不定期。条目信息包含时长、版本差异与设备等级。</p>
+      </div>
+      <div class="footer-col">
+        <h5>分区导航</h5>
+        <a href="/#featured">剧情长片</a>
+        <a href="/#featured">VR沉浸</a>
+        <a href="/#featured">合集精选</a>
+        <a href="/#featured">番外短篇</a>
+        <a href="/#featured">限定企划</a>
+      </div>
+      <div class="footer-col">
+        <h5>内容栏目</h5>
+        <a href="/#overview">分区概览</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">观看指南</a>
+        <a href="/#faq">常见问题</a>
+      </div>
+      <div class="footer-col">
+        <h5>互动</h5>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#rank">热门榜单</a>
+        <a href="/#contribute">投稿线索</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>内容为示例条目聚合，数据截至2026年11月8日。条目名称与日期用于说明分类与版本差异。</span>
+      <span>© 2026 相泽南 五区播放</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+  // 移动端菜单
+  const hamburger = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+  hamburger.addEventListener('click', openMenu);
+  mobileClose.addEventListener('click', closeMenu);
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) closeMenu();
+  });
+  document.querySelectorAll('.mobile-menu-inner a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+  });
+
+  // 搜索筛选
+  const searchInput = document.getElementById('searchInput');
+  const featuredGrid = document.getElementById('featuredGrid');
+  const noResult = document.getElementById('noResult');
+  const cards = featuredGrid.querySelectorAll('.card');
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.trim().toLowerCase();
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const text = (card.dataset.search || '') + ' ' + card.textContent.toLowerCase();
+      if (!query || text.includes(query)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    noResult.classList.toggle('show', visibleCount === 0);
+  });
+
+  // 回到顶部
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('show', window.scrollY > window.innerHeight);
+  });
+  backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // 左栏高亮
+  const sections = document.querySelectorAll('.main-content section[id]');
+  const sidebarLinks = document.querySelectorAll('.channel-sidebar a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sidebarLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '/' + '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+  sections.forEach(section => observer.observe(section));
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "相泽南 五区播放",
+  "description": "相泽南五区作品条目聚合，按剧情、VR、合集、番外、限定分区整理，附观看顺序与版本差异说明。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "五区里的VR条目需要什么设备才能看？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看播放页标注的设备等级。头显专用条目需要支持头部追踪的VR头显，手机适配条目可以用普通手机屏观看但会降分辨率。不支持的设备打开后会自动切到普通版本。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「深夜书房」第3辑和合集版有什么差别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "剧情区第3辑为95分钟，含片头回顾和完整叙事；合集版82分钟，去掉了系列回顾片段，保留单条目主体。两个版本在主线情节上一致，差在连续性和幕后内容。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "限定区的条目下线后还能看到吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "窗口结束后通常不再单独提供，部分条目会进入后续合集或年度企划。以「限定·秋夜散步」为例，保留至12月14日，之后是否重新上架取决于制作方安排，目前没有明确公告。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "番外条目不看主线能直接看吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。番外短篇叙事独立，22到30分钟内自成一题。只是部分道具和场景与主线呼应，先看主线能多认出一层细节，不影响理解。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "剧情区的导演剪辑版和通常版差多少时长？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目前条目里差值在8到15分钟之间，主要来自额外对话和幕后片段。剪辑版标注在标题末尾，播放页会同时列出两个版本的时长，选之前对比一下。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "五区条目按什么节奏更新？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "剧情区大约每两周一条，VR区每月一到两条，合集区按季度打包，番外区跟随主线节奏，限定区不定期。2026年10月下旬到11月初，五区合计更新12个条目。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+  </html>
